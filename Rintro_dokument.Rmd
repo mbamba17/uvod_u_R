@@ -1,0 +1,159 @@
+---
+title: "Uvod u R"
+author: "Mario Bambulović"
+date: "12.2.2020."
+output: html_notebook
+---
+
+## Sadržaj
+
+#### 1. Općenito o R-u
+#### 2. Rstudio
+#### 3. Paketi i Tidyverse
+#### 4. Primjeri
+
+## 1. Općenito o R-u
+
+**NAPOMENA! Sve što ću danas pričati vrijedi i za druge programske jezike i mislim da se sve ove funkcionalnosti mogu naći i u drugim jezicima, R je samo moj program odabira na kojem sam se učio raditi analitiku, cilj  ove prezentacije nije R kao jezik nego stvari koje se mogu općenito raditi u programskim jezicima. U trenutku pisanja R je prema [TIOBE indeksu](https://www.tiobe.com/tiobe-index/) 13. na ljestvici najpopularnijih jezika.**
+
+R je besplatan programski jezik koji su u 90-ima osmislili Ross Ihaka i Robert Gentleman iz Novog Zelanda [link na wikipedia stranicu](https://en.wikipedia.org/wiki/R_(programming_language)). Ono što je važno napomenuti da je R **open source jezik** i kao takav je **besplatan** i stalno se razvija jer ima vrlo aktivnu zajednicu.
+
+ ![](osnivači.PNG) 
+
+***
+
+R se može besplatno skinuti i instalirati [ovdje](https://cran.r-project.org/bin/windows/base/). Instalacija je vrlo jednostavna (next -> next -> next). Kada se instalira, onda se na desktopu stvori ikoan preko koje se pokreće:
+
+![](Rgui_ikona.PNG)
+
+Kada se RGui aplikacija pokrene, sučelje izgleda ovako:
+
+![](Rgui.PNG)
+
+
+## 2. Rstudio
+
+Većina ljudi kada govori o R-u, zapravo misli na Rstudio sučelje koje se može skinuti i instalirati [ovdje](https://rstudio.com/). Rstudio koje privatna kompanija koja za sebe kaže sljedeće: 
+
+> RStudio's mission is to create free and open-source software for data science, scientific research, and technical communication. We do this to enhance the production and consumption of knowledge by everyone, regardless of economic means, and to facilitate collaboration and reproducible research, both of which are critical to the integrity and efficacy of work in science, education, government, and industry.
+
+Nakon što instaliramo i pokrenemo Rstudio, sučelje izgleda ovako:
+
+![](Rstudio.PNG)
+
+**Mrkli mrak, zar ne? :)**
+
+Što se funkcionalnosti, sve što može Rstudio, može i RGui, no ono u čemu Rstudio prednjači je korisničko iskustvo. Neke od cool funkcionalnosti koje su dostupne u Rstudiju su:
+
+* tamna pozadina :)
+* povezivanje s Github-om (o tome više kasnije)
+* Viewer
+* Rmarkdown
+* Shiny
+* pomoć pri pisanju (različite boje za različite objekte, zatvaranje zagrada, autocorrect, sugeriranje riječi, itd...)
+
+## 3. Paketi i Tidyverse
+
+Ono što R i slične programe čini izuzetno moćnima je sposobnost podizanja parametrizacije na nekoliko razina apstrakcije.
+
+![](Parametrizacija.PNG)
+
+Najpoznatiji "svemir" aplikacija koje su međusobno konzistentne i međusobno "komuniciraju" je **Tidyverse** koji razvija upravo Rstudio ekipa:
+
+![](Tidyverse.PNG)
+
+Popratni materijali vezano za sve pakete u sklopu Tydiversea mogu se pronaći [ovdje](https://rstudio.com/products/rpackages/), pri čemu za ove najvažnije pakete postoje fora [šalabahteri](https://rstudio.com/resources/cheatsheets/). Osim šalabahtera postoje i [online knjige](https://rstudio.com/resources/books/), te čak i [webinari](https://resources.rstudio.com/).
+
+Naravno da ovo nije cijeli "svemir" R paketa, koji trenutno broji preko [15000 paketa](https://cran.r-project.org/web/checks/check_summary.html). 
+
+## 4. Primjeri
+
+### 4.1. Povezivanje s izvorima podataka
+
+#### 4.1.1. ECB
+
+ECB ima jako dobro osmišljen sustav [skladišta podataka](http://sdw.ecb.europa.eu/browse.do?node=9689727) gdje je svaki podatak jednoznačno određen sa jedinstvenim kodom - primjer CLIFS indikatora za HR [link](http://sdw.ecb.europa.eu/browseSelection.do?node=9693347):
+
+> CLIFS.M.HR._Z.4F.EC.CLIFS_CI.IDX
+
+```{r }
+library(ecb)
+library(tidyverse)
+library(lubridate)
+pom <- get_data("CLIFS.M.._Z.4F.EC.CLIFS_CI.IDX") %>% select(ref_area,obstime,obsvalue) %>% mutate(datum = make_date(ifelse(substr(obstime,6,7)=="12",as.numeric(substr(obstime,1,4))+1,as.numeric(substr(obstime,1,4))), ifelse(substr(obstime,6,7)=="12",1,as.numeric(substr(obstime,6,7))+1), 1)-1) 
+ggplot(pom,aes(x=datum,y=obsvalue)) + geom_line() + facet_wrap(~ref_area)
+```
+
+```{r}
+reg = data.frame(ref_area=c("AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","GB","U2","I8"),country=c("Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovak Republic","Slovenia","Spain","Sweden","Great Britain","EA changing comp.","Euro Area 19"),regija=c("Other EU","Other EU","CEE","HR","Other EU","CEE","Other EU","CEE","Other EU","Other EU","Other EU","Other EU","CEE","Other EU","Other EU","CEE","CEE","Other EU","Other EU","Other EU","CEE","Other EU","CEE","CEE","CEE","Other EU","Other EU","Other EU","EA changing comp.","Euro Area 19"))
+pom <- pom %>% left_join(reg,by="ref_area") %>% group_by(datum,regija) %>% summarise(clifs=mean(obsvalue,na.rm=T))
+ggplot(pom,aes(x=datum,y=clifs,col=regija)) + geom_line() + theme(legend.title = element_blank(),legend.position = "top") + labs(x="",y="CLIFS indeks")
+
+```
+
+#### 4.1.2. Eurostat
+
+Eurostat isto ima svoj paket za pristup R-a na njihovo [skladište podataka](https://ec.europa.eu/eurostat/data/database). Kod njih je pristup malo drukčije organiziran, tako da najprije treba specificirati tablicu na koju se spajamo - [primjer za BDP](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=namq_10_gdp&lang=en).
+
+```{r, message=F}
+library(eurostat)
+# 1.1. YOY stopa rasta BDP-a
+pom1 <- get_eurostat(id="namq_10_gdp") %>% filter(geo=="HR" & na_item=="B1GQ" & s_adj=="NSA" & unit=="CLV10_MNAC") %>% select(time,bdp=values) %>% arrange(time) %>% as.data.frame()
+
+# 1.2. Doprinos - potrošnja kućanstava
+pom2 <- get_eurostat(id="namq_10_gdp") %>% filter(geo=="HR" & na_item=="P31_S14_S15" & s_adj=="NSA" & unit=="CLV10_MNAC") %>% select(time,c_hh=values) %>% arrange(time)
+
+# 1.3. Doprinos - potrošnja države
+pom3 <- get_eurostat(id="namq_10_gdp") %>% filter(geo=="HR" & na_item=="P3_S13" & s_adj=="NSA" & unit=="CLV10_MNAC") %>% select(time,c_govt=values) %>% arrange(time)
+
+# 1.4. Doprinos - bruto investicije
+pom4 <- get_eurostat(id="namq_10_gdp") %>% filter(geo=="HR" & na_item=="P5G" & s_adj=="NSA" & unit=="CLV10_MNAC") %>% select(time,i_gross=values) %>% arrange(time)
+
+# 1.5. Doprinos - izvoz robe i usluga
+pom5 <- get_eurostat(id="namq_10_gdp") %>% filter(geo=="HR" & na_item=="P6" & s_adj=="NSA" & unit=="CLV10_MNAC") %>% select(time,ex=values) %>% arrange(time)
+
+# 1.6. Doprinos - uvoz robe i usluga
+pom6 <- get_eurostat(id="namq_10_gdp") %>% filter(geo=="HR" & na_item=="P7" & s_adj=="NSA" & unit=="CLV10_MNAC") %>% select(time,im=values) %>% arrange(time)
+
+# opcija 1 - uvijek gledamo godišnje BDP-ove
+pom <- left_join(pom1,pom2,by="time") %>% left_join(pom3,by="time") %>% left_join(pom4,by="time") %>% left_join(pom5,by="time") %>% left_join(pom6,by="time") %>% mutate(datum = make_date(ifelse(month(time)>=10,year(time)+1,year(time)),ifelse(month(time)>=10,1,month(time)+3),1) - 1, bdp_y = (bdp + lag(bdp,1)+ lag(bdp,2) + lag(bdp,3))*1000000 , c_hh_y = (c_hh + lag(c_hh,1)+ lag(c_hh,2) + lag(c_hh,3))*1000000 , c_govt_y = (c_govt + lag(c_govt,1)+ lag(c_govt,2) + lag(c_govt,3))*1000000 , i_gross_y = (i_gross + lag(i_gross,1)+ lag(i_gross,2) + lag(i_gross,3))*1000000 , ex_y = (ex + lag(ex,1)+ lag(ex,2) + lag(ex,3))*1000000 , im_y = (im + lag(im,1)+ lag(im,2) + lag(im,3))*1000000) %>% mutate(dbdp = (bdp_y/lag(bdp_y,4)-1)*100 , dop_c_hh = (c_hh_y/lag(c_hh_y,4)-1)*100*lag(c_hh_y,4)/lag(bdp_y,4) , dop_c_govt = (c_govt_y/lag(c_govt_y,4)-1)*100*lag(c_govt_y,4)/lag(bdp_y,4) , dop_i_gross = (i_gross_y/lag(i_gross_y,4)-1)*100*lag(i_gross_y,4)/lag(bdp_y,4) , dop_ex = (ex_y/lag(ex_y,4)-1)*100*lag(ex_y,4)/lag(bdp_y,4) , dop_im = -(im_y/lag(im_y,4)-1)*100*lag(im_y,4)/lag(bdp_y,4)) %>% select(datum,dbdp,dop_c_hh,dop_c_govt,dop_i_gross,dop_ex,dop_im) %>% na.omit()
+colnames(pom) <- c("datum","BDP","Potrošnja kućanstava","Javna potrošnja","Bruto investicije","Izvoz","Uvoz")
+pom <- pom %>% gather(key = "varijabla",value = "iznos",-datum)
+ggplot(pom %>% filter(varijabla!="BDP"),aes(x=datum,y=iznos,fill=varijabla)) + geom_col(position="stack") + geom_point(data=pom %>% filter(varijabla=="BDP"),aes(x=datum,y=iznos)) + theme(legend.position = "top", legend.title = element_blank()) + labs(x="",y="")
+rm(pom1,pom2,pom3,pom4,pom5,pom6,pom)
+```
+
+#### 4.1.3. Svjetska Banka
+
+Kod njih pristup podacima funkcionira na sličan način kao i kod ECB-a, gdje svaki indikator ima jedinstveni kod - [primjer za indikator trgovine na tržištu kapitala u %BDP-a](https://data.worldbank.org/indicator/CM.MKT.TRAD.GD.ZS).
+
+```{r}
+library(wbstats)
+reg = data.frame(ctry=c("AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","GB","U2","I8"),country=c("Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovak Republic","Slovenia","Spain","Sweden","Great Britain","EA changing comp.","Euro Area 19"),regija=c("Other EU","Other EU","CEE","HR","Other EU","CEE","Other EU","CEE","Other EU","Other EU","Other EU","Other EU","CEE","Other EU","Other EU","CEE","CEE","Other EU","Other EU","Other EU","CEE","Other EU","CEE","CEE","CEE","Other EU","Other EU","Other EU","EA changing comp.","Euro Area 19"))
+stocks_traded <- wb(indicator = "CM.MKT.TRAD.GD.ZS")
+pom <- stocks_traded %>% filter(iso2c %in% reg$ctry & date %in% c("2014","2015","2016","2017","2018")) %>% select(date,ctry=iso2c,value) %>% group_by(ctry) %>% summarise(value=mean(value,na.rm=T)) %>% left_join(reg,by="ctry") %>% filter(ctry!="US") %>% mutate(regija=ifelse(regija=="CEE","Zemlje SIE",ifelse(regija=="Other EU","Ostale EU zemlje","HR")))
+ggplot(pom,aes(x=reorder(ctry,-value),y=value)) + geom_col(aes(fill=regija)) + labs(x="",y="") + theme(legend.position="top",legend.title = element_blank())
+rm(reg,stocks_traded,pom)
+```
+
+#### 4.1.4. OECD
+
+Jedan fora primjer mogućnosti R-a, su rezultati financijske pismenosti koju provodi OECD i koju objalvjuje [u PDF-u](http://www.oecd.org/daf/fin/financial-education/OECD-INFE-International-Survey-of-Adult-Financial-Literacy-Competencies.pdf). Postoji paket u R-u koji ima spoobnost čitanja PDF-ova i uspio je učitati ove podatke sa slike na stranici 10.
+
+```{r}
+library(tabulizer)
+pismenost_tablica <- extract_tables("http://www.oecd.org/daf/fin/financial-education/OECD-INFE-International-Survey-of-Adult-Financial-Literacy-Competencies.pdf")
+temp <- pismenost_tablica[[3]]
+temp <- as.data.frame(temp)
+colnames(temp)<-c("ctry_score","knowledge_score","behaviour_score","attitude_score")
+temp <- temp %>% separate(ctry_score,c("country","financial_knowledge")," \\(") %>% mutate(financial_knowledge=str_replace(financial_knowledge,"\\)","")) %>% mutate(financial_knowledge=as.numeric(financial_knowledge),knowledge_score=as.character(knowledge_score),behaviour_score=as.character(behaviour_score),attitude_score=as.character(attitude_score)) %>% mutate(knowledge_score=as.numeric(knowledge_score),behaviour_score=as.numeric(behaviour_score),attitude_score=as.numeric(attitude_score))
+financijska_pismenost <- temp
+reg = data.frame(ctry=c("AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","GB","U2","US"),country=c("Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovak Republic","Slovenia","Spain","Sweden","United Kingdom","EA changing comp.","United States"),regija=c("Other EU","Other EU","CEE","HR","Other EU","CEE","Other EU","CEE","Other EU","Other EU","Other EU","Other EU","CEE","Other EU","Other EU","CEE","CEE","Other EU","Other EU","Other EU","CEE","Other EU","CEE","CEE","CEE","Other EU","Other EU","Other EU","EA changing comp.","US"))
+pom <- financijska_pismenost %>% filter(country %in% reg$country) %>% left_join(reg,by="country")
+ggplot(pom,aes(x=reorder(ctry,-financial_knowledge),y=financial_knowledge)) + geom_col(aes(fill=regija)) + geom_hline(yintercept = financijska_pismenost$financial_knowledge[financijska_pismenost$country=="Average, all countries"]) + labs(x="",y="Financijska pismenost") + theme(legend.position="top")
+rm(pismenost_tablica,temp,financijska_pismenost,pom)
+```
+
+#### 4.1.5. EIOPA podaci
+
+EIOPA nije napredna kao ECB ili EUROSTAT u objavi podataka i objavljuje ih [u excelima](https://www.eiopa.europa.eu/tools-and-data/insurance-statistics_en), no i za to imamo sistem.
