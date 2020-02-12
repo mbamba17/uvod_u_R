@@ -2,6 +2,8 @@ library(tidyverse)
 library(lubridate)
 library(readxl)
 library(ecb)
+library(rio)
+library(scales)
 
 # Kopiranje dataframea u excel
 
@@ -26,24 +28,20 @@ reg = data.frame(ctry=c("AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","
 pom0 <- get_data("EXR.Q.HRK.EUR.SP00.E") %>% select(obstime,tecaj_eur=obsvalue) %>% mutate(datum = make_date(ifelse(substr(obstime,7,7)=="4",as.numeric(substr(obstime,1,4))+1,as.numeric(substr(obstime,1,4))), ifelse(substr(obstime,7,7)=="4",1,as.numeric(substr(obstime,7,7))*3+1), 1)-1) %>% select(-obstime)
 
 # 2.1. Balance sheet - u mil. EUR
-download.file("https://eiopa.europa.eu/Publications/Insurance%20Statistics/SQ_Balance_Sheet.csv", "bilanca.csv", method = "auto", quiet = FALSE, mode = "w",cacheOK = TRUE, extra = getOption("download.file.extra"))
-pom1 <- read.csv(file="bilanca.csv", header=TRUE, sep=",") %>% select(`Reporting.country`,`Reference.period`,`Item.name`,`Item.code`,`Value`)
+
+pom1 <- rio::import(file="https://register.eiopa.europa.eu/Publications/Insurance%20Statistics/SQ_Balance_Sheet.csv") %>% select(`Reporting country`,`Reference period`,`Item name`,`Item code`,`Value`)
 colnames(pom1) <- c("country","period","razina","tag","iznos_eur")
-unlink("bilanca.csv")
 pom1 <- pom1 %>% mutate(datum = make_date(ifelse(substr(period,7,7)=="4",as.numeric(substr(period,1,4))+1,as.numeric(substr(period,1,4))), ifelse(substr(period,7,7)=="4",1,as.numeric(substr(period,7,7))*3+1), 1)-1) %>% mutate(tablica="bilanca") %>% select(-period)
 
 # 2.2. Own Funds - u mil. EUR
-download.file("https://eiopa.europa.eu/Publications/Insurance%20Statistics/SQ_Own_Funds.csv", "kapital.csv", method = "auto", quiet = FALSE, mode = "w",cacheOK = TRUE, extra = getOption("download.file.extra"))
-pom2 <- read.csv(file="kapital.csv", header=TRUE, sep=",") %>% select(`Reporting.country`,`Reference.period`,`Item.name`,`Item.code`,`Value`)
+
+pom2 <- rio::import(file="https://register.eiopa.europa.eu/Publications/Insurance%20Statistics/SQ_Own_Funds.csv") %>% select(`Reporting country`,`Reference period`,`Item name`,`Item code`,`Value`)
 colnames(pom2) <- c("country","period","razina","tag","iznos_eur")
-unlink("kapital.csv")
 pom2 <- pom2 %>% mutate(datum = make_date(ifelse(substr(period,7,7)=="4",as.numeric(substr(period,1,4))+1,as.numeric(substr(period,1,4))), ifelse(substr(period,7,7)=="4",1,as.numeric(substr(period,7,7))*3+1), 1)-1) %>% mutate(tablica="kapital") %>% select(-period)
 
 # 2.3. Premiums, claims and expenses - u mil. EUR
-download.file("https://eiopa.europa.eu/Publications/Insurance%20Statistics/SQ_Premiums_Claims_Expenses.csv", "premije.csv", method = "auto", quiet = FALSE, mode = "w",cacheOK = TRUE, extra = getOption("download.file.extra"))
-pom3 <- read.csv(file="premije.csv", header=TRUE, sep=",") %>% select(`Reporting.country`,`Reference.period`,`Item`,`Item.code`,`Value`)
+pom3 <- rio::import(file="https://register.eiopa.europa.eu/Publications/Insurance%20Statistics/SQ_Premiums_Claims_Expenses.csv") %>% select(`Reporting country`,`Reference period`,`Item`,`Item code`,`Value`)
 colnames(pom3) <- c("country","period","razina","tag","iznos_eur")
-unlink("premije.csv")
 pom3 <- pom3 %>% mutate(datum = make_date(ifelse(substr(period,7,7)=="4",as.numeric(substr(period,1,4))+1,as.numeric(substr(period,1,4))), ifelse(substr(period,7,7)=="4",1,as.numeric(substr(period,7,7))*3+1), 1)-1) %>% mutate(tablica="premije") %>% select(-period)
 
 # 2.4. Sklapanje tablica u 1 tablicu: osiguranja
@@ -52,26 +50,27 @@ rm(pom1,pom2,pom3)
 save(osiguranja,file="osiguranja.Rda")
 
 # 2.5. Asset exposures - u mil. EUR
-# Iz nekog razloga direktno skidanje ovog excela ne funkcionira, tako da ga trebamo ručno skinuti i spremiti na: D:\mbamba\DATA\International\EIOPA\Primjeri excela pod imenom SQ_Exposures.xlsx
-izlozenost_os <- read_excel(path = "D:/mbamba/DATA/International/EIOPA/Primjeri excela/SQ_Exposures.xlsx",sheet="Raw data (CSV)") %>% select(`Reference period`,`NCA_ISO_CODE`,`Reporting country`,`Undertaking type`,`CIC main category`,`CIC sub-category`,`Portfolio type`,`Location of investment`,`Real estate exposure`,`Type of real estate exposure`,`Value (euro millions)`)
+izlozenost_os <- rio::import(file="https://register.eiopa.europa.eu/Publications/Insurance%20Statistics/SQ_Exposures.xlsx",which="Raw data (CSV)") %>% select(`Reference period`,`NCA_ISO_CODE`,`Reporting country`,`Undertaking type`,`CIC main category`,`CIC sub-category`,`Portfolio type`,`Location of investment`,`Real estate exposure`,`Type of real estate exposure`,`Value (euro millions)`)
 colnames(izlozenost_os) <- c("period","ctry","country","vrsta_osiguranja","razina1","razina2","portfelj","drzava_izlozenosti","nekretnina_izlozenost","vrsta_nekretnine","iznos_eur")
 izlozenost_os <- izlozenost_os %>% mutate(datum = make_date(ifelse(substr(period,7,7)=="4",as.numeric(substr(period,1,4))+1,as.numeric(substr(period,1,4))), ifelse(substr(period,7,7)=="4",1,as.numeric(substr(period,7,7))*3+1), 1)-1) %>% select(-period,-ctry) %>% left_join(pom0,by="datum") %>% left_join(reg,by="country") %>% mutate(iznos=iznos_eur*tecaj_eur)
 save(izlozenost_os,file="izlozenost_osiguranja.Rda")
-rm(reg,pom0)
+rm(pom0)
 
-# 3. Kopiranje u excel ####
-load("D:/mbamba/DATA/International/EIOPA/osiguranja.Rda")
-load("D:/mbamba/DATA/International/EIOPA/izlozenost_osiguranja.Rda")
-write.csv(x = osiguranja,file = "osiguranja.csv")
-write.csv(x = izlozenost_os,file = "izlozenost_os.csv")
+# Slika 29. Struktura izloženosti osiguranja po instrumentu ####
+pom <- izlozenost_os %>% group_by(datum,regija,razina1) %>% summarise(iznos=sum(iznos,na.rm = T)) %>% mutate(razina1=ifelse(razina1=="CIC 1 Government bonds","Državne obveznice",ifelse(razina1=="CIC 2 Corporate bonds","Korporativne obveznice",ifelse(razina1=="CIC 3 Equity","Dionice",ifelse(razina1=="CIC 9 Property","Nekretnine",ifelse(razina1=="CIC 8 Mortgages and loans","Krediti",ifelse(razina1=="CIC 4 Collective Investment Undertakings","UCITS fondovi","Ostalo")) ))))) %>% group_by(datum,regija,razina1) %>% summarise(iznos=sum(iznos,na.rm = T)) %>% ungroup() %>% filter(regija!="Other EEA") %>% mutate(regija=ifelse(regija=="CEE","Zemlje SIE",ifelse(regija=="Other EU","Ostale zemlje EU-a","HR")))  %>% mutate(datum=floor_date(datum,unit = "month")) %>% arrange(razina1)
+pom$razina1 <- factor(pom$razina1,levels=c("Dionice","Državne obveznice","Korporativne obveznice","Krediti","Nekretnine","UCITS fondovi","Ostalo"))
+pom$datum=as.Date(pom$datum)
+ggplot(pom,aes(x=datum,y=iznos,fill=razina1)) + geom_col(position="fill") + facet_wrap(~regija) + theme(legend.position = "top",legend.title = element_blank()) + labs(x="",y="") + scale_x_date(breaks = "6 months",labels = date_format("%m/%y.")) + scale_fill_manual(values=c("khaki","tomato2","turquoise3","palegreen","firebrick","skyblue2","cornsilk3")) + scale_y_continuous(labels = scales::percent)
 
-# 4. Izloženost domaći vs. strani ####
+# Slika 30. Struktura izloženosti po rezidentnosti ####
+pom <- izlozenost_os %>% mutate(rezidentnost=ifelse(country==drzava_izlozenosti,"Domaća","Strana")) %>% group_by(datum,regija,rezidentnost) %>% summarise(iznos=sum(iznos,na.rm = T)) %>% ungroup() %>% filter(regija!="Other EEA") %>% mutate(regija=ifelse(regija=="CEE","Zemlje SIE",ifelse(regija=="Other EU","Ostale zemlje EU-a","HR"))) %>% mutate(datum=floor_date(datum,unit = "month"))
+pom$datum=as.Date(pom$datum)
+ggplot(pom,aes(x=datum,y=iznos,fill=rezidentnost)) + geom_col(position="fill") + facet_wrap(~regija) + theme(legend.position = "top",legend.title = element_blank()) + labs(x="",y="") + scale_x_date(breaks = "6 months",labels = date_format("%m/%y.")) + scale_y_continuous(labels = scales::percent)
 
-# prekogranična izloženost
-pom1 <- izlozenost_os %>% group_by(datum,ctry) %>% filter(country!=drzava_izlozenosti) %>% summarise(prekogranicni=sum(iznos,na.rm=T))
-pom2 <- izlozenost_os %>% group_by(datum,ctry) %>% summarise(ukupno_izlozenost=sum(iznos,na.rm=T))
-pom <- left_join(pom1,pom2,by=c("ctry","datum")) %>% left_join(reg,by="ctry") %>% group_by(regija,datum) %>% summarise(prekogranicni=sum(prekogranicni,na.rm=T),ukupno_izlozenost=sum(ukupno_izlozenost,na.rm=T)) %>% mutate(udio_prekogranicni=prekogranicni/ukupno_izlozenost*100) %>% select(datum,regija,udio_prekogranicni) %>% spread(regija,udio_prekogranicni)
-skopiraj(pom)
-# ggplot(pom,aes(x=datum,y=udio_prekogranicni)) + geom_line() + facet_wrap(~regija, scales="free")
+# Slika 32. Troškovna efikasnost osiguranja ####
+
+# prosjek 2016-2019
+pom <- osiguranja %>% group_by(datum,ctry,regija) %>% filter(tablica=="premije" & tag %in% c("Z0002")) %>% summarise(iznos=sum(iznos_eur,na.rm=T)) %>% group_by(ctry,regija) %>% summarise(iznos=mean(iznos,na.rm=T)*100) %>% filter(regija!="Ostale EEA zemlje" & ctry %in% reg$ctry) %>% mutate(regija=ifelse(regija=="CEE","Zemlje SIE",ifelse(regija=="Other EU","Ostale zemlje EU-a","HR")))
+ggplot(pom,aes(x=reorder(ctry,-iznos),y=iznos)) + geom_col(aes(fill=regija)) + geom_hline(aes(yintercept=mean(pom$iznos))) + geom_text(aes(25,mean(pom$iznos),label = round(mean(pom$iznos),digits = 2), vjust = -1)) + labs(x="",y="Kvota troškova (2017.-6/2019.,%)") + theme(legend.position = "top",legend.title = element_blank())
 
 
