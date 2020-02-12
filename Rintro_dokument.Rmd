@@ -157,3 +157,111 @@ rm(pismenost_tablica,temp,financijska_pismenost,pom)
 #### 4.1.5. EIOPA podaci
 
 EIOPA nije napredna kao ECB ili EUROSTAT u objavi podataka i objavljuje ih [u excelima](https://www.eiopa.europa.eu/tools-and-data/insurance-statistics_en), no i za to imamo sistem.
+
+#### 4.1.6. Financijski računi
+
+Financijske račune dobivamo na krajnje nestrukturiran način i koji se nalaze [ovdje](D:\mbamba\DATA\Financijski_racuni). Ono što R omogućuje je sklapanje u 1 bazu koja se onda može koristiti za analizu i ne samo to nego je na taj način 970MB podataka u excelima pretvoreno u 2.7MB veliki dataframe.
+
+Što je još bitnije matrični prikaz podataka je pretvoren u tidy strukturu strukturu podataka:
+
+![](Tidy_data.PNG)
+
+Ovakva struktura podataka omogućuje sljedeće slike:
+
+```{r}
+library(igraph)
+# Slika 11. Mreža transakcija ####
+load("FinRacuni.Rda")
+t0 <- as.Date("2012-03-31")
+t1 <- as.Date("2019-06-30")
+br_dana <- as.numeric(t1-t0)
+# anualizirani rast sektora na temelju transakcija između t0 i t1
+# početna stanja
+pom11 <- financijski_racuni %>% mutate(sektor_mb = ifelse(sektor_mb=="Ostali financijski posrednici","Ostale FI",sektor_mb)) %>% group_by(datum,sektor_mb) %>% filter(vrsta_iznosa=="BAL T" & vrsta_imovine=="Total" & razina=="Assets" & !sektor %in% c("TOTAL","NA") & !protustrana %in% c("TOTAL","NA") & datum==t0) %>% summarise(stanja=sum(iznos,na.rm = T))
+# ukupne transakcije po sektorima (za izračun rasta na temelju transakcija)
+pom12 <- financijski_racuni %>% mutate(sektor_mb = ifelse(sektor_mb=="Ostali financijski posrednici","Ostale FI",sektor_mb)) %>% group_by(sektor_mb) %>% filter(vrsta_iznosa=="TRANS T" & vrsta_imovine=="Total" & razina=="Assets" & !sektor %in% c("TOTAL","NA") & !protustrana %in% c("TOTAL","NA") & datum>t0) %>% summarise(cum_trans=sum(iznos,na.rm = T))
+# izračun rasta na temelju transakcija
+pom1 <- left_join(pom11,pom12,by="sektor_mb") %>% mutate(cum_rast=((cum_trans)/stanja)*100) %>% mutate(an_rast=((1+cum_rast/100)^(365/br_dana)-1)*100)
+# doprinosi protustranki anualiziranom rastu sektora na temelju transakcija između t0 i t1
+# kumulativne transakcije po protustranci
+pom2 <- financijski_racuni %>% mutate(sektor_mb = ifelse(sektor_mb=="Ostali financijski posrednici","Ostale FI",sektor_mb) , protustrana_mb = ifelse(protustrana_mb=="Ostali financijski posrednici","Ostale FI",protustrana_mb)) %>% group_by(sektor_mb,protustrana_mb) %>% filter(vrsta_iznosa=="TRANS T" & vrsta_imovine=="Total" & razina=="Assets" & !sektor %in% c("TOTAL","NA") & !protustrana %in% c("TOTAL","NA") & datum>t0) %>% summarise(cum_trans_sekt=sum(iznos,na.rm = T))
+# sklapanje i računanje stopa rasta
+pom <- left_join(pom2,pom1,by=c("sektor_mb")) %>% mutate(cum_dop_sekt = (cum_trans_sekt/stanja)*100) %>% mutate(doprinos_trans=((1+cum_dop_sekt/100)^(365/br_dana)-1)*100)
+
+# definiranje bridova
+bridovi <- pom %>% as.data.frame() %>% mutate(sektor_mb=ifelse(sektor_mb=="Poduzeća","POD",ifelse(sektor_mb=="Ostale FI","OFI",ifelse(sektor_mb=="Centralna banka","CB",ifelse(sektor_mb=="Kreditne institucije","KI",ifelse(sektor_mb=="Investicijski fondovi","IF",ifelse(sektor_mb=="Osiguranja","OS",ifelse(sektor_mb=="Mirovinski fondovi","MF",ifelse(sektor_mb=="Država","DRŽ",ifelse(sektor_mb=="Stanovništvo","KUĆ",ifelse(sektor_mb=="Inozemstvo","INO",ifelse(sektor_mb=="Ostali financijski posrednici","OFP","NA")))))))))))) %>% mutate(protustrana_mb=ifelse(protustrana_mb=="Poduzeća","POD",ifelse(protustrana_mb=="Ostale FI","OFI",ifelse(protustrana_mb=="Centralna banka","CB",ifelse(protustrana_mb=="Kreditne institucije","KI",ifelse(protustrana_mb=="Investicijski fondovi","IF",ifelse(protustrana_mb=="Osiguranja","OS",ifelse(protustrana_mb=="Mirovinski fondovi","MF",ifelse(protustrana_mb=="Država","DRŽ",ifelse(protustrana_mb=="Stanovništvo","KUĆ",ifelse(protustrana_mb=="Inozemstvo","INO",ifelse(protustrana_mb=="Ostali financijski posrednici","OFP","NA"))))))))))))
+
+# definiranje vrhova 
+vrhovi <- pom1 %>% ungroup() %>% mutate(sektor_mb=ifelse(sektor_mb=="Poduzeća","POD",ifelse(sektor_mb=="Ostale FI","OFI",ifelse(sektor_mb=="Centralna banka","CB",ifelse(sektor_mb=="Kreditne institucije","KI",ifelse(sektor_mb=="Investicijski fondovi","IF",ifelse(sektor_mb=="Osiguranja","OS",ifelse(sektor_mb=="Mirovinski fondovi","MF",ifelse(sektor_mb=="Država","DRŽ",ifelse(sektor_mb=="Stanovništvo","KUĆ",ifelse(sektor_mb=="Inozemstvo","INO",ifelse(sektor_mb=="Ostali financijski posrednici","OFP","NA")))))))))))) %>% mutate(hanfa=ifelse(sektor_mb %in% c("IF","MF","OS","OFI","OFP"),"da","ne")) %>% filter(sektor_mb!="CB") %>% select(sektor_mb,rast_trans=an_rast,hanfa)
+
+# uzimanje samo bridova koji su različito od 0% i samo onih bridova koji imaju veze sa HANFA-inim sektorima
+bridovi <- bridovi %>% filter((doprinos_trans<=-0.5 | doprinos_trans>=0.5) & (sektor_mb %in% c("MF","OS","IF","OFI","OFP") | protustrana_mb %in% c("MF","OS","IF","OFI","OFP"))) %>% filter(sektor_mb!=protustrana_mb)
+
+# brisanje privremenih tablica
+rm(pom1,pom2,pom11,pom12)
+
+# kreiranje mrežnog objekta
+graf <- graph_from_data_frame(d = bridovi, vertices = vrhovi, directed = T)
+# postavljanje boje vrha (ako rastao zeleno, ako pao onda crveno)
+V(graf)$color <- ifelse(V(graf)$rast_trans <=(-10), "firebrick4", ifelse(V(graf)$rast_trans <=(-5),"orangered",ifelse(V(graf)$rast_trans<=0,"lightsalmon",ifelse(V(graf)$rast_trans <=5,"gold",ifelse(V(graf)$rast_trans <=10,"yellowgreen","seagreen4")))))
+# postavljanje boje brida (ako rasla zeleno, ako pala crveno)
+E(graf)$color <- ifelse(E(graf)$doprinos_trans <=(-5), "firebrick4", ifelse(E(graf)$doprinos_trans <=(-2.5),"orangered",ifelse(E(graf)$doprinos_trans <=0,"lightsalmon",ifelse(E(graf)$doprinos_trans <=2.5,"gold",ifelse(E(graf)$doprinos_trans <=5,"yellowgreen","seagreen4")))))
+# slika mreže povezanosti - jednake veličine vrhova
+plot(graf, vertex.size = 25, edge.arrow.size = 0.5, layout=layout_nicely(graf), vertex.label.color = "black", vertex.frame.color=NA,vertex.shape=ifelse(V(graf)$hanfa=="da","square","circle"))
+# Add a legend
+legend("topleft", legend=c("<-oo;-10] ; <-10;-5]", "<-10;-5] ; <-5;-2,5]","<-5;0] ; <-2,5;-0,5]","<0;5] ; [0,5;2,5]","<5;10] ; <2,5;5]","<10;+oo> ; <5;+oo>"), fill=c("firebrick4", "orangered","lightsalmon","gold","yellowgreen","seagreen4"), title = "Vrhovi (rast na temelju transakcija) ; \n Strelice (doprinosi rastu)", cex=0.8, bty="n")
+
+# Slika 12. Mreža stanja ####
+zadnji_datum <- "2019-06-30"
+# veličina direktne povezanosti u apsolutnoj vrijednosti
+pom1 <- financijski_racuni %>% mutate(sektor_mb = ifelse(sektor_mb=="Ostali financijski posrednici","Ostale FI",sektor_mb) , protustrana_mb = ifelse(protustrana_mb=="Ostali financijski posrednici","Ostale FI",protustrana_mb)) %>% filter(datum==zadnji_datum & vrsta_iznosa=="BAL T" & vrsta_imovine=="Total" & razina=="Assets" & !sektor %in% c("TOTAL","NA") & !protustrana %in% c("TOTAL","NA")) %>% group_by(sektor_mb,protustrana_mb) %>% summarise(iznos=sum(iznos,na.rm = T)/1000000000)
+# ukupna veličina sektora (ona će nam služiti da relativiziramo povezanost i obojimo u 4 boje)
+pom2 <- financijski_racuni %>% mutate(sektor_mb = ifelse(sektor_mb=="Ostali financijski posrednici","Ostale FI",sektor_mb)) %>% filter(datum==zadnji_datum & vrsta_iznosa=="BAL T" & vrsta_imovine=="Total" & razina=="Assets" & !sektor %in% c("TOTAL","NA") & protustrana %in% c("TOTAL")) %>% group_by(sektor_mb) %>% summarise(velicina_sektor=sum(iznos,na.rm = T)/1000000000)
+# ukupna veličina protustrane (ona će nam služiti da relativiziramo povezanost i kreiramo debljinu linije)
+pom3 <- financijski_racuni %>% mutate(protustrana_mb = ifelse(protustrana_mb=="Ostali financijski posrednici","Ostale FI",protustrana_mb)) %>% filter(datum==zadnji_datum & vrsta_iznosa=="BAL T" & vrsta_imovine=="Total" & razina=="Assets" & !protustrana %in% c("TOTAL","NA") & sektor %in% c("TOTAL")) %>% group_by(protustrana_mb) %>% summarise(velicina_protustrana=sum(iznos,na.rm = T)/1000000000)
+# ukupna veličina izloženosti sektoru financijskih usluga (ona će nam služiti da relativiziramo povezanost i kreiramo veličinu kugle za neHANFA-ine vrhove)
+pom4 <- financijski_racuni %>% mutate(sektor_mb = ifelse(sektor_mb=="Ostali financijski posrednici","Ostale FI",sektor_mb)) %>% filter(datum==zadnji_datum & vrsta_iznosa=="BAL T" & vrsta_imovine=="Total" & razina=="Liabilities" & !sektor %in% c("TOTAL","NA") & protustrana_mb %in% c("Mirovinski fondovi","Osiguranja","Investicijski fondovi","Ostali financijski posrednici","Ostale FI")) %>% group_by(sektor_mb) %>% summarise(izlozenost_hanfa=sum(iznos,na.rm = T)/1000000000)
+# sklapanje u 1 tibble
+bridovi <- left_join(pom1,pom2,by="sektor_mb") %>% left_join(pom3,by="protustrana_mb") %>% left_join(pom4,by="sektor_mb") %>% mutate(izlozenost_velicina_sektor=iznos/velicina_sektor*100 , izlozenost_velicina_protustrana=iznos/velicina_protustrana*100) %>% as.data.frame() %>% mutate(sektor_mb=ifelse(sektor_mb=="Poduzeća","POD",ifelse(sektor_mb=="Ostale FI","OFI",ifelse(sektor_mb=="Centralna banka","CB",ifelse(sektor_mb=="Kreditne institucije","KI",ifelse(sektor_mb=="Investicijski fondovi","IF",ifelse(sektor_mb=="Osiguranja","OS",ifelse(sektor_mb=="Mirovinski fondovi","MF",ifelse(sektor_mb=="Država","DRŽ",ifelse(sektor_mb=="Stanovništvo","KUĆ",ifelse(sektor_mb=="Inozemstvo","INO",ifelse(sektor_mb=="Ostali financijski posrednici","OFP","NA")))))))))))) %>% mutate(protustrana_mb=ifelse(protustrana_mb=="Poduzeća","POD",ifelse(protustrana_mb=="Ostale FI","OFI",ifelse(protustrana_mb=="Centralna banka","CB",ifelse(protustrana_mb=="Kreditne institucije","KI",ifelse(protustrana_mb=="Investicijski fondovi","IF",ifelse(protustrana_mb=="Osiguranja","OS",ifelse(protustrana_mb=="Mirovinski fondovi","MF",ifelse(protustrana_mb=="Država","DRŽ",ifelse(protustrana_mb=="Stanovništvo","KUĆ",ifelse(protustrana_mb=="Inozemstvo","INO",ifelse(protustrana_mb=="Ostali financijski posrednici","OFP","NA"))))))))))))
+
+# uzimanje samo bridova koji su veći od 5% i samo onih bridova koji imaju veze sa HANFA-inim sektorima
+bridovi <- bridovi %>% filter(izlozenost_velicina_sektor>5 & (sektor_mb %in% c("MF","OS","IF","OFI","OFP") | protustrana_mb %in% c("MF","OS","IF","OFI","OFP")))
+# definiranje vrhova 
+vrhovi <- left_join(pom2,pom4,by="sektor_mb") %>% mutate(sektor_mb=ifelse(sektor_mb=="Poduzeća","POD",ifelse(sektor_mb=="Ostale FI","OFI",ifelse(sektor_mb=="Centralna banka","CB",ifelse(sektor_mb=="Kreditne institucije","KI",ifelse(sektor_mb=="Investicijski fondovi","IF",ifelse(sektor_mb=="Osiguranja","OS",ifelse(sektor_mb=="Mirovinski fondovi","MF",ifelse(sektor_mb=="Država","DRŽ",ifelse(sektor_mb=="Stanovništvo","KUĆ",ifelse(sektor_mb=="Inozemstvo","INO",ifelse(sektor_mb=="Ostali financijski posrednici","OFP","NA")))))))))))) %>% mutate(hanfa=ifelse(sektor_mb %in% c("IF","MF","OS","OFI","OFP"),"da","ne")) %>% mutate(velicina_kruga=ifelse(hanfa=="da",velicina_sektor,izlozenost_hanfa)) %>% filter(sektor_mb!="CB")
+
+# brisanje privremenih tablica
+rm(pom1,pom2,pom3,pom4)
+
+# kreiranje mrežnog objekta
+graf <- graph_from_data_frame(d = bridovi, vertices = vrhovi, directed = T)
+# postavljanje boje vrha (ako Hanfa nadzire "blue", inače "gray")
+V(graf)$color <- ifelse(V(graf)$hanfa == "da", "deepskyblue3", "azure3")
+# veličina oznaka na vrhovima
+V(graf)$label.cex = 0.8
+# postavljanje boje brida (ako <5% imovine, onda nema brida, ako do 10% onda zeleno, ako do 20% onda narančasto, a preko crveno)
+E(graf)$color <- ifelse(E(graf)$izlozenost_velicina_sektor <= 10, "darkgreen", ifelse(E(graf)$izlozenost_velicina_sektor <= 15,"yellow3",ifelse(E(graf)$izlozenost_velicina_sektor<=20,"darkorange","darkred")))
+
+# slika mreže povezanosti
+
+# razne debljine bridova
+#plot(graf, vertex.size = V(graf)$velicina_kruga/2, edge.arrow.size = 0.5, layout=layout_nicely(graf), edge.width = E(graf)$izlozenost_velicina_sektor/8, vertex.label.color = "black", vertex.frame.color=NA)
+# jednake debljine bridova
+plot(graf, vertex.size = 25, edge.arrow.size = 0.5, layout=layout_nicely(graf), edge.width = 2, vertex.label.color = "black", vertex.frame.color=NA)
+# legenda
+legend("topleft", legend=c("<5","<5;10]","<10;15]","<15;20]",">20"), fill=c("white", "darkgreen","yellow3","darkorange","darkred"), title = "Oznake boja strelica \n (u % ukupne imovine sektora)", cex=0.8, bty="n")
+
+```
+
+### 4.2. Interaktivni grafikoni
+
+#### 4.2.1. Plotly
+
+Ovo je primjer Gantt-grafikona koji ste vidjeli prošli tjedan sa vremenskim planom aktivnosti oko pripreme 4. broja Makroprudencijalnog skenera rizika.
+
+#### 4.2.2. Gapminder primjer
+
+Hans Rosling je jedno od najpoznatijih imena u statističkim krugovima i veliki popularizator "data sciencea", njegov [TED talk](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=hr) je jedan od najgledanijih ikada (velika preporuka da ga pogledate).
+
+#### 4.2.3. Shiny mreže OeNB-a
+
+Vidi folder JVI_Contagion.
