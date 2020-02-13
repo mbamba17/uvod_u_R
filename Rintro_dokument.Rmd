@@ -430,3 +430,6 @@ ggplot(pom,aes(x=datum,y=iznos,fill=razina3)) + geom_area() + ggtitle("Tehničke
 rm(finpodaci,os_bilanca,pom,razine)
 ```
 
+Svi kodovi koji su korišteni za pripremu prezentiranih materijala mogu se pronaći na [github adresi](https://github.com/mbamba17/uvod_u_R).
+
+# Hvala!
