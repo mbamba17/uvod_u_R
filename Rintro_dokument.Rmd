@@ -10,7 +10,10 @@ output: html_notebook
 #### 1. Općenito o R-u
 #### 2. Rstudio
 #### 3. Paketi i Tidyverse
-#### 4. Primjeri
+#### 4. Data science proccess
+#### 5. Dohvat podataka
+#### 6. Priprema podataka
+#### 7. Analiza i komunikacija
 
 ## 1. Općenito o R-u
 
@@ -66,11 +69,15 @@ Popratni materijali vezano za sve pakete u sklopu Tydiversea mogu se pronaći [o
 
 Naravno da ovo nije cijeli "svemir" R paketa, koji trenutno broji preko [15000 paketa](https://cran.r-project.org/web/checks/check_summary.html). 
 
-## 4. Primjeri
+## 4. Data science proccess
 
-### 4.1. Povezivanje s izvorima podataka
+Proces svake kvantitativne analize se sastoji od 3 ključna dijela i kod sva 3 dijela R nudi vrhunska rješenja.
 
-#### 4.1.1. ECB
+![](data_science_process.PNG)
+
+## 5. Povezivanje s izvorima podataka
+
+### 5.1. ECB
 
 ECB ima jako dobro osmišljen sustav [skladišta podataka](http://sdw.ecb.europa.eu/browse.do?node=9689727) gdje je svaki podatak jednoznačno određen sa jedinstvenim kodom - primjer CLIFS indikatora za HR [link](http://sdw.ecb.europa.eu/browseSelection.do?node=9693347):
 
@@ -82,16 +89,17 @@ library(tidyverse)
 library(lubridate)
 pom <- get_data("CLIFS.M.._Z.4F.EC.CLIFS_CI.IDX") %>% select(ref_area,obstime,obsvalue) %>% mutate(datum = make_date(ifelse(substr(obstime,6,7)=="12",as.numeric(substr(obstime,1,4))+1,as.numeric(substr(obstime,1,4))), ifelse(substr(obstime,6,7)=="12",1,as.numeric(substr(obstime,6,7))+1), 1)-1) 
 ggplot(pom,aes(x=datum,y=obsvalue)) + geom_line() + facet_wrap(~ref_area)
+
 ```
 
 ```{r}
 reg = data.frame(ref_area=c("AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","GB","U2","I8"),country=c("Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovak Republic","Slovenia","Spain","Sweden","Great Britain","EA changing comp.","Euro Area 19"),regija=c("Other EU","Other EU","CEE","HR","Other EU","CEE","Other EU","CEE","Other EU","Other EU","Other EU","Other EU","CEE","Other EU","Other EU","CEE","CEE","Other EU","Other EU","Other EU","CEE","Other EU","CEE","CEE","CEE","Other EU","Other EU","Other EU","EA changing comp.","Euro Area 19"))
 pom <- pom %>% left_join(reg,by="ref_area") %>% group_by(datum,regija) %>% summarise(clifs=mean(obsvalue,na.rm=T))
 ggplot(pom,aes(x=datum,y=clifs,col=regija)) + geom_line() + theme(legend.title = element_blank(),legend.position = "top") + labs(x="",y="CLIFS indeks")
-
+rm(pom)
 ```
 
-#### 4.1.2. Eurostat
+### 5.2. Eurostat
 
 Eurostat isto ima svoj paket za pristup R-a na njihovo [skladište podataka](https://ec.europa.eu/eurostat/data/database). Kod njih je pristup malo drukčije organiziran, tako da najprije treba specificirati tablicu na koju se spajamo - [primjer za BDP](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=namq_10_gdp&lang=en).
 
@@ -123,7 +131,7 @@ ggplot(pom %>% filter(varijabla!="BDP"),aes(x=datum,y=iznos,fill=varijabla)) + g
 rm(pom1,pom2,pom3,pom4,pom5,pom6,pom)
 ```
 
-#### 4.1.3. Svjetska Banka
+### 5.3. Svjetska Banka
 
 Kod njih pristup podacima funkcionira na sličan način kao i kod ECB-a, gdje svaki indikator ima jedinstveni kod - [primjer za indikator trgovine na tržištu kapitala u %BDP-a](https://data.worldbank.org/indicator/CM.MKT.TRAD.GD.ZS).
 
@@ -136,7 +144,7 @@ ggplot(pom,aes(x=reorder(ctry,-value),y=value)) + geom_col(aes(fill=regija)) + l
 rm(reg,stocks_traded,pom)
 ```
 
-#### 4.1.4. OECD
+### 5.4. OECD
 
 Jedan fora primjer mogućnosti R-a, su rezultati financijske pismenosti koju provodi OECD i koju objalvjuje [u PDF-u](http://www.oecd.org/daf/fin/financial-education/OECD-INFE-International-Survey-of-Adult-Financial-Literacy-Competencies.pdf). Postoji paket u R-u koji ima spoobnost čitanja PDF-ova i uspio je učitati ove podatke sa slike na stranici 10.
 
@@ -154,17 +162,26 @@ ggplot(pom,aes(x=reorder(ctry,-financial_knowledge),y=financial_knowledge)) + ge
 rm(pismenost_tablica,temp,financijska_pismenost,pom)
 ```
 
-#### 4.1.5. EIOPA podaci
+### 5.5. EIOPA podaci
 
 EIOPA nije napredna kao ECB ili EUROSTAT u objavi podataka i objavljuje ih [u excelima](https://www.eiopa.europa.eu/tools-and-data/insurance-statistics_en), no i za to imamo sistem.
 
-#### 4.1.6. Financijski računi
 
-Financijske račune dobivamo na krajnje nestrukturiran način i koji se nalaze [ovdje](D:\mbamba\DATA\Financijski_racuni). Ono što R omogućuje je sklapanje u 1 bazu koja se onda može koristiti za analizu i ne samo to nego je na taj način 970MB podataka u excelima pretvoreno u 2.7MB veliki dataframe.
+## 6. Priprema podataka
 
-Što je još bitnije matrični prikaz podataka je pretvoren u tidy strukturu strukturu podataka:
+Važno je naglasiti da je za kvalitetnu analizu nužna dobra priprema podataka. Prema [istraživanju CrowdFlower-a](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#5cf37956f637), u *Data science-u* se **80% vremena svodi na pripremu podataka**, što je ujedno i najmanje zanimljiv dio procesa.
+
+![](ciscenje_podataka_anketa.PNG)
+
+### 6.1. Tidy struktura podataka
+
+Kako bi se vrijeme potrebno za obradu podataka, ali i vrijeme za analizu podataka smanjilo, nužno je da podaci budu u tidy formatu.
 
 ![](Tidy_data.PNG)
+
+### 6.2. Financijski računi
+
+Financijske račune dobivamo na krajnje nestrukturiran način i koji se nalaze [ovdje](D:\mbamba\DATA\Financijski_racuni). Ono što R omogućuje je sklapanje u 1 bazu koja se onda može koristiti za analizu i ne samo to nego je na taj način 970MB podataka u excelima pretvoreno u 2.7MB veliki dataframe.
 
 Ovakva struktura podataka omogućuje sljedeće slike:
 
@@ -197,9 +214,6 @@ vrhovi <- pom1 %>% ungroup() %>% mutate(sektor_mb=ifelse(sektor_mb=="Poduzeća",
 # uzimanje samo bridova koji su različito od 0% i samo onih bridova koji imaju veze sa HANFA-inim sektorima
 bridovi <- bridovi %>% filter((doprinos_trans<=-0.5 | doprinos_trans>=0.5) & (sektor_mb %in% c("MF","OS","IF","OFI","OFP") | protustrana_mb %in% c("MF","OS","IF","OFI","OFP"))) %>% filter(sektor_mb!=protustrana_mb)
 
-# brisanje privremenih tablica
-rm(pom1,pom2,pom11,pom12)
-
 # kreiranje mrežnog objekta
 graf <- graph_from_data_frame(d = bridovi, vertices = vrhovi, directed = T)
 # postavljanje boje vrha (ako rastao zeleno, ako pao onda crveno)
@@ -210,6 +224,8 @@ E(graf)$color <- ifelse(E(graf)$doprinos_trans <=(-5), "firebrick4", ifelse(E(gr
 plot(graf, vertex.size = 25, edge.arrow.size = 0.5, layout=layout_nicely(graf), vertex.label.color = "black", vertex.frame.color=NA,vertex.shape=ifelse(V(graf)$hanfa=="da","square","circle"))
 # Add a legend
 legend("topleft", legend=c("<-oo;-10] ; <-10;-5]", "<-10;-5] ; <-5;-2,5]","<-5;0] ; <-2,5;-0,5]","<0;5] ; [0,5;2,5]","<5;10] ; <2,5;5]","<10;+oo> ; <5;+oo>"), fill=c("firebrick4", "orangered","lightsalmon","gold","yellowgreen","seagreen4"), title = "Vrhovi (rast na temelju transakcija) ; \n Strelice (doprinosi rastu)", cex=0.8, bty="n")
+# brisanje privremenih tablica
+rm(t0,t1,br_dana,pom1,pom2,pom11,pom12,pom,bridovi,vrhovi,graf)
 
 # Slika 12. Mreža stanja ####
 zadnji_datum <- "2019-06-30"
@@ -229,9 +245,6 @@ bridovi <- bridovi %>% filter(izlozenost_velicina_sektor>5 & (sektor_mb %in% c("
 # definiranje vrhova 
 vrhovi <- left_join(pom2,pom4,by="sektor_mb") %>% mutate(sektor_mb=ifelse(sektor_mb=="Poduzeća","POD",ifelse(sektor_mb=="Ostale FI","OFI",ifelse(sektor_mb=="Centralna banka","CB",ifelse(sektor_mb=="Kreditne institucije","KI",ifelse(sektor_mb=="Investicijski fondovi","IF",ifelse(sektor_mb=="Osiguranja","OS",ifelse(sektor_mb=="Mirovinski fondovi","MF",ifelse(sektor_mb=="Država","DRŽ",ifelse(sektor_mb=="Stanovništvo","KUĆ",ifelse(sektor_mb=="Inozemstvo","INO",ifelse(sektor_mb=="Ostali financijski posrednici","OFP","NA")))))))))))) %>% mutate(hanfa=ifelse(sektor_mb %in% c("IF","MF","OS","OFI","OFP"),"da","ne")) %>% mutate(velicina_kruga=ifelse(hanfa=="da",velicina_sektor,izlozenost_hanfa)) %>% filter(sektor_mb!="CB")
 
-# brisanje privremenih tablica
-rm(pom1,pom2,pom3,pom4)
-
 # kreiranje mrežnog objekta
 graf <- graph_from_data_frame(d = bridovi, vertices = vrhovi, directed = T)
 # postavljanje boje vrha (ako Hanfa nadzire "blue", inače "gray")
@@ -249,19 +262,118 @@ E(graf)$color <- ifelse(E(graf)$izlozenost_velicina_sektor <= 10, "darkgreen", i
 plot(graf, vertex.size = 25, edge.arrow.size = 0.5, layout=layout_nicely(graf), edge.width = 2, vertex.label.color = "black", vertex.frame.color=NA)
 # legenda
 legend("topleft", legend=c("<5","<5;10]","<10;15]","<15;20]",">20"), fill=c("white", "darkgreen","yellow3","darkorange","darkred"), title = "Oznake boja strelica \n (u % ukupne imovine sektora)", cex=0.8, bty="n")
+# brisanje privremenih tablica
+rm(zadnji_datum,br_dana,pom1,pom2,pom3,pom4,pom,bridovi,vrhovi,graf)
 
 ```
 
-### 4.2. Interaktivni grafikoni
+### 6.3. Shiny aplikacija
 
-#### 4.2.1. Plotly
+Kada su podaci u tidy formatu, onda je moguće napraviti sljedeću aplikaciju za analizu kretanja u sustavu.
+
+![](shiny_bilanca_slika.PNG)
+
+## 7. Analiza i komunikacija rezultata
+
+### 7.1. Plotly
 
 Ovo je primjer Gantt-grafikona koji ste vidjeli prošli tjedan sa vremenskim planom aktivnosti oko pripreme 4. broja Makroprudencijalnog skenera rizika.
 
-#### 4.2.2. Gapminder primjer
+![](Gant_skener.PNG)
+
+### 7.2. Gapminder primjer
 
 Hans Rosling je jedno od najpoznatijih imena u statističkim krugovima i veliki popularizator "data sciencea", njegov [TED talk](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=hr) je jedan od najgledanijih ikada (velika preporuka da ga pogledate).
 
-#### 4.2.3. Shiny mreže OeNB-a
+![](Gapminder.PNG)
+
+### 7.3. Shiny mreže OeNB-a
 
 Vidi folder JVI_Contagion.
+
+![](Contagion.PNG)
+
+### 7.4. Mapa EU
+
+Vrlo jednostavno se može napraviti i mapa EU po zemljama. Npr, prikaz definicije regija koje prikazujemo u skeneru.
+
+```{r}
+library(tidyverse)
+library(grid)
+library(rworldmap)
+library(eurostat)
+library(lubridate)
+
+# Get the world map
+worldMap <- getMap()
+
+# Member States of the European Union
+reg = data.frame(ref_area=c("AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","GB"),country=c("Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Rep.","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","United Kingdom"),regija=c("Other EU","Other EU","CEE","HR","Other EU","CEE","Other EU","CEE","Other EU","Other EU","Other EU","Other EU","CEE","Other EU","Other EU","CEE","CEE","Other EU","Other EU","Other EU","CEE","Other EU","CEE","CEE","CEE","Other EU","Other EU","Other EU"))
+
+# Select only the index of states member of the E.U.
+indEU <- which(worldMap$NAME %in% reg$country)
+
+# Extract longitude and latitude border's coordinates of members states of E.U. 
+europeCoords <- lapply(indEU, function(i){
+  df <- data.frame(worldMap@polygons[[i]]@Polygons[[1]]@coords)
+  df$region =as.character(worldMap$NAME[i])
+  colnames(df) <- list("long", "lat", "region")
+  return(df)
+})
+
+europeCoords <- do.call("rbind", europeCoords)
+
+# 1. Mapa regija ####
+europeanUnionTable <- data.frame(country = reg$country, value = reg$regija)
+europeCoords$value <- europeanUnionTable$value[match(europeCoords$region,europeanUnionTable$country)]
+
+# Plot the map
+P <- ggplot() + geom_polygon(data = europeCoords, aes(x = long, y = lat, group = region, fill = value), colour = "black", size = 0.1) + coord_map(xlim = c(-13, 35),  ylim = c(32, 71))
+P <- P + scale_fill_discrete(name = "Regija", na.value = "grey50")
+P <- P + theme(#panel.grid.minor = element_line(colour = NA), panel.grid.minor = element_line(colour = NA),
+  #panel.background = element_rect(fill = NA, colour = NA),
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank(), axis.ticks.x = element_blank(),
+  axis.ticks.y = element_blank(), axis.title = element_blank(),
+  #rect = element_blank(),
+  plot.margin = unit(0 * c(-1.5, -1.5, -1.5, -1.5), "lines"))
+P
+
+P <- P + scale_fill_gradient(name = "Growth Rate", low = "#FF0000FF", high = "#FFFF00FF", na.value = "grey50")
+
+
+```
+
+
+
+
+Jednako jednostavno se može napraviti i kontinuirana mapa koja npr. prikazuje kumulativni rast BDP-a od 2010. po EU zemljama.
+
+```{r}
+pom <- get_eurostat(id="namq_10_gdp") %>% filter(na_item=="B1GQ" & s_adj=="NSA" & unit=="CLV10_MNAC") %>% select(time,geo,bdp=values) %>% arrange(time) %>% as.data.frame() %>% group_by(geo) %>% mutate(bdp_y = (bdp + lag(bdp,1)+ lag(bdp,2) + lag(bdp,3))) %>% filter(time>="2007-10-01") %>% mutate(datum = make_date(ifelse(month(time)>=10,year(time)+1,year(time)),ifelse(month(time)>=10,1,month(time)+3),1) - 1) %>% select(datum,ref_area=geo,bdp_y) %>% na.omit() %>% ungroup()
+baza <- pom %>% filter(datum=="2010-12-31") %>% select(ref_area,baza=bdp_y)
+delta_bdp <- left_join(pom,baza,by=c("ref_area")) %>% mutate(indeks=bdp_y/baza*100) %>% filter(datum=="2019-09-30") %>% left_join(reg,by="ref_area") %>% na.omit()
+
+europeanUnionTable <- data.frame(country = delta_bdp$country, value = delta_bdp$indeks)
+europeCoords$value <- europeanUnionTable$value[match(europeCoords$region,europeanUnionTable$country)]
+
+# Plot the map
+P <- ggplot() + geom_polygon(data = europeCoords, aes(x = long, y = lat, group = region, fill = value), colour = "black", size = 0.1) + coord_map(xlim = c(-13, 35),  ylim = c(32, 71))
+P <- P + scale_fill_gradient(name = "Kumulativni rast BDP-a od 2010.", low = "red", high = "green", na.value = "grey50")
+P <- P + theme(#panel.grid.minor = element_line(colour = NA), panel.grid.minor = element_line(colour = NA),
+  #panel.background = element_rect(fill = NA, colour = NA),
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank(), axis.ticks.x = element_blank(),
+  axis.ticks.y = element_blank(), axis.title = element_blank(),
+  #rect = element_blank(),
+  plot.margin = unit(0 * c(-1.5, -1.5, -1.5, -1.5), "lines"))
+P
+# brisanje privremenih tablica
+rm(worldMap,reg,indEU,europeCoords,europeanUnionTable,P,pom,baza,delta_bdp)
+
+```
+
+### 7.5. Word cloud riječi koje su se najčešće koristile u 3. broju skenera
+
+![](word_cloud.png)
+

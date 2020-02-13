@@ -1,0 +1,429 @@
+	Uvodno
+
+Hrvatska agencija za nadzor financijskih usluga (dalje u tekstu: Hanfa) odgovorna je, uz Hrvatsku narodnu banku i Ministarstvo financija, za stabilnost financijskog sustava u Republici Hrvatskoj pa je promicanje i očuvanje financijske stabilnosti, u skladu sa Zakonom o Hrvatskoj agenciji za nadzor financijskih usluga, jedan od osnovnih ciljeva njezina rada. Stabilan financijski sustav podrazumijeva nesmetano funkcioniranje svih njegovih segmenata (financijskih institucija, tržišta, usluga i infrastrukture) u procesu alokacije resursa, procjene i upravljanja rizicima te izvršavanja plaćanja, kao i njegovu otpornost na iznenadne šokove.
+Financijsku stabilnost mogu narušiti procesi koji nastaju i razvijaju se unutar samog sustava stvarajući ranjivosti koje se u slučaju javljanja određenih šokova mogu materijalizirati u vidu narušenih likvidnosnih i kapitalnih pozicija financijskih institucija onemogućavajući normalno funkcioniranje dijela ili cijelog financijskog sustava. Pritom se šokovi mogu prenijeti iz međunarodnog okruženja, ali i biti generirani domaćim makroekonomskim i financijskim kretanjima, ekonomskom politikom ili promjenama u institucionalnom okruženju. Stoga svaki rizik kojem je sustav izložen, a koji može imati negativne posljedice za funkcioniranje dijela ili cijelog financijskog sustava uzrokujući pritom i ozbiljan negativan utjecaj na realno gospodarstvo, predstavlja sistemski rizik. 
+Posljednjih je godina na globalnoj razini ostvaren velik napredak u dijelu razumijevanja, a time i identifikacije, procjene te praćenja sistemskih rizika financijskog sektora. No kako bi se identificirani rizici pravovremeno prevenirali, odnosno kako bi se ublažio efekt njihove materijalizacije, bilo je potrebno razviti i odgovarajući skup instrumenata i alata, odnosno politika usmjerenih ciljano na osiguranje stabilnosti sustava u cjelini, jednom riječju makroprudencijalnih politika. Stoga su u Europskoj uniji (EU) na nacionalnoj i internacionalnoj razini uspostavljena tijela s makroprudencijalnim ovlastima, a uz makroprudencijalne alate razvijeni su i okviri za međunarodnu suradnju. Premda je fokus makroprudencijalnih politika dosad primarno bio usmjeren na bankarski sektor, rastući udio i značaj nebankarskog dijela financijskog sustava stvara strukturalne promjene i zahtijeva daljnji razvoj makroprudencijalnog okvira. Usto, financijska se integracija produbljuje što stvara potrebu za praćenjem i adresiranjem ranjivosti u međusektorskom, ali i prekograničnom kontekstu.
+Ovom se publikacijom stoga nastoji dati uvid u proces identifikacije, procjene i praćenja evolucije sistemskih rizika u sektoru financijskih usluga, koji je pod nadzorom Hanfe, kako bi se pravovremeno poduzele odgovarajuće mjere u cilju sprječavanja njihove materijalizacije i narušavanja stabilnosti financijskog sustava. Time će se pridonijeti i boljem razumijevanju sistemskih rizika, posebno u segmentu identificiranja ranjivosti kao i kanala širenja rizika, potaknuti na planiranje aktivnosti i mjera koje pružaju odgovarajuću zaštitu od posljedica materijalizacije tih rizika i pridonijeti većem povjerenju u financijski sustav te jačanju otpornosti sustava na šokove.  
+	Makroekonomski pregled
+
+Rast domaćeg gospodarstva blago se ubrzao u trećem tromjesečju 2019., no i dalje je na razini prosječnog rasta tijekom posljednje četiri godine koji je manji nego u većini usporedivih zemalja EU-a.  Domaća ekonomska aktivnost odraz je rasta potrošnje, domaće i inozemne, stimulirane iznimno niskim troškovima zaduživanja i rastom dohodaka uvjetovanih cikličkim i strukturnim čimbenicima (deficit radne snage, inozemni transferi, porezne izmjene). Međutim, već dugotrajno razdoblje globalno niskih kamatnih stopa i ekspanzivnih monetarnih politika u okruženju povišenih neizvjesnosti ne uspijeva dugoročnije i značajnije stimulirati globalnu gospodarsku aktivnost, što s obzirom na veliku ovisnost domaćeg rasta o gospodarskoj aktivnosti europodručja, a posebno najvažnijih vanjskotrgovinskih partnera -  Njemačke i Italije , naglašava negativne rizike za domaći gospodarski rast. Istodobno je nastavljeno poboljšanje relativnih fiskalnih pokazatelja kroz ciklički rast poreznih prihoda i ekonomske aktivnosti te smanjenje troška kamatnih rashoda s obzirom na povoljne uvijete na međunarodnim financijskim tržištima. Poboljšanje kreditnog rejtinga proširilo je potencijalnu investicijsku bazu u hrvatski državni dug te se kroz rast cijena odrazilo na povećanje obvezničke imovine sektora financijskih usluga koja dominira ukupnim ulaganjima, ali i manje prinose. Pad povrata na obveznička ulaganja  s obzirom na tržišna kretanja teško se može kompenzirati alternativnim ulaganjima bez značajnijeg povećanja izloženosti rizicima. Stoga će s obzirom na očekivani nastavak razdoblja niskih kamatnih stopa, fokus sektora financijskih usluga  i u narednom razdoblju biti usmjeren na potragu za prinosima.
+
+ 
+Gospodarski se rast u trećem tromjesečju 2019. godine blago ubrzao u odnosu na prethodno tromjesečje, čime je nastavljena ekspanzivna faza ciklusa koja je započela sredinom 2014. godine. Tako je u posljednjih pet godina kumulativni rast bruto domaćeg proizvoda iznosio 14,9 %, čime je u cijelosti kompenzirana kontrakcija ekonomske aktivnosti zabilježena u razdoblju od 2008. do 2013. godine. Krajem rujna 2019. realna godišnja stopa rasta bruto domaćeg proizvoda iznosila je 2,9 % (slika 1.). Pritom je najveći doprinos povećanju obujma BDP-a ostvaren rastom neto izvoza roba i usluga (porast od 6,6 % na godišnjoj razini) te osobne potrošnje (porast od 3,1 % na godišnjoj razini). Premda i ostale sastavnice bruto domaćeg proizvoda na godišnjoj razini bilježe rast, on se usporio i to najsnažnije kod bruto investicija u fiksni kapital.  
+Slika 1. Realni rast BDP-a i doprinosi rastu
+ 
+Izvor: DZS
+
+Rast neto izvoza prvenstveno je obilježio rast izvoza, s podjednakim doprinosom roba  i usluga, ali i istodobno usporavanje uvoza koji je na godišnjoj razini porastao tek za 1,1 % (za razliku od drugog tromjesečja u kojem je taj rast iznosio čak 8,3 %). Istodobno je zabilježen značajan rast viška na tekućem i kapitalnom računu platne bilance  pod utjecajem rasta neto izvoza usluga, ponajprije uslijed rasta prihoda od turizma.  Turistički prihodi porasli su zbog veće prosječne potrošnje s obzirom na to da je rast broja dolazaka i noćenja turista prema podacima DZS-a usporio u odnosu na isto razdoblje prethodne godine.  Povoljan utjecaj na saldo tekućeg i kapitalnog računa ima i intenzivnije korištenje sredstava iz fondova EU-a. Naime, apsorpcija pomoći od međunarodnih organizacija udvostručila se u odnosu na prva tri tromjesečja 2018. godine, što je uz porast prihoda od PDV-a (od 8 %) doprinijelo porastu prihoda konsolidirane opće države od 9,2 % u prva tri tromjesečja 2019. Istodobno je povećana i rashodna strana (za 7,2 %) čemu je najviše pridonio rast socijalnih naknada i rashoda za korištenje dobara i usluga te porast naknada zaposlenima. Navedena kretanja rezultirala su viškom konsolidirane opće države. Istodobno je javni dug stagnirao na razini od 74,9 % BDP-a. Stoga se rizik revalorizacije obvezničke imovine, koja čini najveći dio investicija sektora financijskih usluga, uslijed promjene premije rizika države u kratkom roku ocjenjuje umjerenim.  
+Slika 2. Nastavak pozitivnih trendova na tržištu rada 
+ 
+Napomena: Podaci o prosječnoj mjesečnoj bruto plaći i broju zaposlenih u pravnim osobama (koriste se prilikom izračuna administrativne stope nezaposlenosti) od siječnja 2015. nadalje dobiveni su korištenjem administrativnih podataka iz JOPPD obrasca te stoga nisu usporedivi s ranije objavljenim podacima (siječanj 1998. – prosinac 2014.). 
+Izvori: DZS, HNB.
+
+Uz neto izvoz, pozitivan doprinos gospodarskom rastu dala je i osobna potrošnja  . Nastavljeni su pozitivni trendovi na domaćem tržištu rada (godišnji rast realne bruto plaće od 2,4 % krajem rujna 2019. te smanjenje stope administrativne nezaposlenosti za 1,1 p.b. u odnosu na isto razdoblje prošle godine, slika 2.) koji su  uz ciklički rast privredne aktivnosti posljedica i strukturnog deficita radne snage. Opisana kretanja na tržištu rada izravno utječu na povećanje uplata doprinosa kroz drugi mirovinski stup i posljedični porast imovine mirovinskih fondova (slika 7.). Rastu potrošnje doprinosi i općeniti optimizam potrošača pa se indeksi pouzdanja, očekivanja i raspoloženja potrošača nalaze u okolini povijesno zabilježenih najviših razina. Za razliku od optimizma potrošača, analiza sentimenta investitora sugerira kako se investitori, posebno mali, unatoč poboljšanim makroekonomskim uvjetima i okruženju niskih kamatnih stopa sustavno ne ponašaju iracionalno tražeći veće povrate na tržištu kapitala koje bilježi blagi oporavak u 2019. (vidjeti okvir 1.: Indeks sentimenta za Hrvatsku: jesu li domaći investitori iracionalni?). 
+Pozitivni uvjeti na tržištu rada, u kombinaciji s povijesno niskim troškovima financiranja, doprinijeli su nastavku rasta kreditiranja privatnog sektora, ponajprije kućanstava kroz gotovinske te nešto manje stambene kredite. Jačanje kreditne aktivnosti odražava se u porastu premije osiguranja sposobnosti vraćanja kredita (CPI osiguranje) koje je jedno od najbrže rastućih oblika neživotnih osiguranja kojim se dio kreditnog rizika prenosi s kreditne institucije na društvo za osiguranje. Neovisno o tome što je uglavnom riječ o manjim osiguranim iznosima , koncentracija ovih ugovora osiguranja kod nekolicine društava koja imaju uspostavljene poslovne odnose s kreditnim institucijama u nepovoljnim cikličkim uvjetima na tržištu rada može biti nezanemariv rashod i odraziti se na likvidnost društva. Povećana potražnja za nekretninama koja je dinamizirala rast stambenih kredita utjecala je i na rast cijena nekretnina koje su u drugom tromjesečju porasle za čak 10 % u odnosu na isto razdoblje prethodne godine. Time su se  cijene približile pretkriznim razinama, dok su na pojedinim segmentima tržišta čak i više. S obzirom na značaj nekretnina kao investicijskog oblika i u privatnom i u financijskom sektoru, iznenadna i značajnija korekcija cijena bi izrazito nepovoljno djelovala na cjelokupni sustav pa tako i na sektor financijskih usluga, posebice društva za osiguranje čijih je oko 12 % ulaganja povezano s tržištem nekretnina.  
+Glavni rizici za preokretanje još uvijek povoljnih trendova u domaćem gospodarstvu trenutačno su povezani s kretanjima u vanjskom okružju, a odnose se na potencijalno daljnje jačanje protekcionizma na globalnoj razini te mogućnost snažnijeg usporavanja gospodarskog rasta europodručja, posebice najznačajnijih hrvatskih vanjskotrgovinskih partnera. Naime, prema projekcijama MMF-a  gospodarski rast europodručja bi u 2019. mogao usporiti na 1,2 % (s 1,9 % u 2018.) i tek se neznatno oporaviti u 2020. dolazeći do 1,4 %. Slične su projekcije i Europske komisije  koja za 2019. predviđa skroman rast od 1,1 % i tek blago povećanje u 2020. na 1,2 %. S obzirom na očekivani nastavak slabog rasta njemačkog i talijanskog gospodarstva  povećava se vjerojatnost prelijevanja negativnih impulsa inozemne potražnje na domaću gospodarsku aktivnost putem izvozne komponente (slika 3.). Usto, slabljenje investicijskih aktivnosti koje su u  prethodnim razdobljima uglavnom bile realizirane u javnom te manjim dijelom privatnom sektoru, a koji se pri njihovu financiranju i dalje uglavnom oslanja na bankovno, a ne tržišno financiranje, ističu strukturnu slabost domaće ekonomije koja svoj rast temelji na cikličkim kretanjima privatne potrošnje, kako domaće tako i inozemne. 
+Slika 3. Očekivanja gospodarskog rasta europodručja su pesimistična
+  
+Napomena: Prikazana je statistička distribucija prognoza ispitanika u vezi s očekivanjem rasta realnog BDP-a europodručja na vremenskom horizontu od tri godine, vertikalne linije označuju medijalnu vrijednost odgovora za promatranu godinu.
+Izvor: ESB – Survey of Professional Forecasters 
+ 
+	Pregled rizika u sektoru financijskih usluga
+
+Značaj sektora financijskih usluga u Hrvatskoj kontinuirano raste već gotovo deset godina, a taj je trend nastavljen i u trećem tromjesečju 2019., čime je imovina pod upravljanjem financijskih institucija i fondova na ovom tržištu dosegnula 33 % ukupne imovine financijskog sustava, odnosno 55 % BDP-a. Nakon potisnutog rasta tijekom posljednje dvije godine, sektor financijskih usluga je u prva tri tromjesečja 2019. zabilježio dvoznamenkastu stopu rasta od čak 12 % (slika 4.). Glavni generatori rasta i dalje su mirovinski fondovi čija imovina pod upravljanjem raste primarno zbog pozitivnih tržišnih kretanja, ponajprije obvezničkih ulaganja, ali i kroz nove uplate koje još uvijek višestruko nadmašuju isplate. Iako veličinom relativno skromniji od mirovinskih fondova, zamjetan pozitivan doprinos ukupnom rastu sektora financijskih usluga tijekom 2019. došao je od rasta imovine  investicijskih fondova, društava za osiguranje te leasing društava.  U razdoblju od 2012. do sredine 2019. hrvatski sektor financijskih usluga u prosjeku je na godišnjoj razini rastao za 7,6 %, što je u skladu s prosjekom EU-a, dok je istodobno imovina kreditnih institucija stagnirala (slika 5.). Slični trendovi zabilježeni su i u ostalim zemljama srednje i istočne Europe, dok su zemlje zapadne Europe s obzirom na stupanj „zrelosti“ ostvarivale komparativno niže stope rasta sektora financijskih usluga. Posljedično je značaj sektora financijskih usluga u Hrvatskoj usporediv sa značajem tog sektora u zemljama SIE, no ipak mnogo niži u odnosu na zemlje zapadne Europe. 
+
+Slika 4. Značaj sektora financijskih usluga kontinuirano raste čemu pozitivno doprinose gotovo svi segmenti tog tržišta
+  
+Napomena: Financijski sektor, osim sektora financijskih usluga, uključuje i kreditne institucije.
+Izvori: HNB, DZS, ESB i Hanfa
+Slika 5. Dinamika rasta znatno je veća u sektoru financijskih usluga nego u bankovnom sektoru, pri čemu je veličina domaćeg sektora financijskih usluga usporediva sa zemljama SIE
+ 
+Napomena: SIE zemlje čine: BG, CZ, EE, HU, LV, LT, PL, RO, SK i SI. Prikazani su podaci za drugo tromjesečje 2019., dok je za Hrvatsku prikazan podatak na dan 30.9.2019. Financijski sektor, osim sektora financijskih usluga, uključuje i kreditne institucije.
+Izvori: ESB i Hanfa
+
+ 
+3.1. Koncentracija 
+
+Domaći sektor financijskih usluga razmjerno je visoko koncentriran s obzirom na vrstu financijskih institucija budući da mirovinski fondovi upravljaju s 54 % ukupne imovine sektora (slika 6.). Rast iznosa uplaćenih doprinosa u još uvijek aktualnoj fazi akumulacije sredstava mirovinskog sustava stimuliran je rastom osnovica s obzirom na još uvijek povoljna ciklička makroekonomska kretanja, učinak koji deficit radne snage realizira u plaćama u privatnom sektoru te sindikalno djelovanje u javnom sektoru. Iako uplate doprinosa višestruko nadmašuju isplate mirovina iz drugog i trećeg stupa, tijekom narednih godina intenzivirat će se isplate mirovina temeljem kapitalizirane individualne štednje što bi, uz negativne demografske trendove, moglo smanjiti imovinu mirovinskog sustava, odnosno koncentraciju sektora financijskih usluga. 
+Tijekom prvih devet mjeseci 2019. ubrzao se rast neto imovine mirovinskih fondova te je ona povećana za 13,8 mlrd. kuna, čemu su, uz spomenuti rast uplata, značajno doprinijela pozitivna tržišna kretanja (slika 7.). Posljedica je to rasta cijena državnih obveznica u okruženju niskih kamatnih stopa, a značajan efekt imao je i  povratak Hrvatske u investicijski rejting u prvom polugodištu, što ih je učinilo prihvatljivim investicijskim oblikom većem broju institucionalnih investitora. Istodobno su se oporavile i  cijene na dioničkom tržištu nakon dvogodišnje kontrakcije (slika 20.).
+Unatoč ovim kretanjima relativan značaj mirovinskih fondova u sektoru financijskih usluga stagnirao je tijekom prva tri tromjesečja 2019. s obzirom na komparativno znatno intenzivniji rast imovine ostalih segmenta tog sektora, prvenstveno društava za osiguranje, investicijskih fondova te leasing društava.  
+Budući da su domaće obveznice najzastupljeniji oblik ulaganja kako društava za osiguranje tako i investicijskih fondova, spomenuta tržišna kretanja povoljno su djelovala i na vrijednost njihove imovine. Porast imovine leasing društava primarno se temelji na poslovima leasinga u segmentu vozila koji snažno raste tijekom posljednje tri godine. Taj je rast povezan s ekspanzivnom fazom gospodarskog ciklusa u kojem se hrvatska ekonomija trenutačno nalazi, a koji se očituje i u porastu uvoza cestovnih vozila (slika 8.). Time je višegodišnji rast rizika koncentracije tržišta financijskih usluga u 2019. zaustavljen, no on je i dalje izražen pa mirovinskih fondovi nastavljaju determinirati kretanje cjelokupnog sektora. 
+Slika 6. Mirovinski fondovi i društva za osiguranje upravljaju s oko 75 % imovine tržišta financijskih usluga 
+ 
+Izvor: Hanfa
+
+Slika 7. Porast neto imovine mirovinskih fondova u prva tri tromjesečja 2019. primarno je pod utjecajem pozitivnih tržišnih kretanja
+ 
+Izvor: Hanfa
+
+Slika 8. Snažan rast djelatnosti leasinga vozila povezan je s gospodarskim oporavkom
+  
+Napomena: Prikazana je vrijednost nedospjelih potraživanja po leasing ugovorima.
+Izvori: Hanfa, DZS (sezonska prilagodba HNB-a) 
+Slika 9. Indeksi koncentracije pojedinih segmenata sektora financijskih usluga
+ 
+Napomena: Razina koncentracije prikazana je pomoću Herfindahl-Hirschmanovog indeksa, pri čemu više vrijednosti označuju višu razinu koncentracije tržišta. Indeksi koncentracije za mirovinski segment i segment investicijskih fondova izračunati su na razini društava za upravljanje. Iako ne postoji opće prihvaćena skala prema kojoj se tržišta klasificiraju kao nisko/visoko koncentrirana, Američki odjel za pravosuđe smatra tržišta do vrijednosti indeksa 1500 kompetitivnima, dok ona iznad 2500 smatra visoko koncentriranima. Pojašnjenje oznaka sektora nalazi se u popisu kratica na kraju publikacije. Podatak za 2019. označava stanje na kraju rujna 2019.
+Izvor: Hanfa
+
+Veličinom najznačajniji  mirovinski segment  sektora financijskih usluga (obveznih i dobrovoljnih fondova) nalazi u zoni visoke koncentracije, što predstavlja značajan strukturni sistemski rizik ne samo za sektor financijskih usluga nego i za cjelokupni financijski sustav. Posljedica je to ne samo malog broja društava za upravljanje tim fondovima, već i niske aktivnosti mirovinskih osiguranika pri izboru mirovinskog društva, odnosno fonda. Takvi su osiguranici,  sukladno zakonski definiranim mehanizmima raspodjele novih osiguranika po pojedinim društvima, odnosno fondovima koji su bili na snazi od porezne reforme 2002. do 2014., bili proporcionalno više raspoređivani upravo u fondove s najvećim tržišnim udjelom. Osim mirovinskog dijela sektora financijskih usluga u zoni visoko koncentriranih još su i segmenti investicijskih društava te faktoringa, no riječ je o relativno malim segmentima tržišta koji su na kraju rujna 2019. činili svega 0,7 % sektora financijskih usluga. Rast koncentracije faktoringa tijekom 2019. posljedica je likvidacije jednog društva, dok je koncentracija investicijskih društava bitno smanjena zbog prijenosa imovine jednog društva na bankarski sektor. 
+Koncentracija u segmentima investicijskih fondova (AIF i UCITS) te leasinga blago je porasla tijekom prva tri tromjesečja 2019. Unatoč tome segmenti UCITS fondova, osiguranja i leasinga smatraju se kompetitivnima obzirom da ne prelaze granicu vrijednosti HHI indeksa od 1500 bodova. Domaći je sektor osiguranja razmjerno konkurentan i u usporedi sa zemljama SIE, pri čemu je koncentracija malo veća od prosjeka EU-a u segmentu neživotnog osiguranja (slika 10.). 
+Slika 10. Koncentracija sektora osiguranja u EU-u (kraj 2018.)
+ 
+Napomena: Koncentracija je mjerena udjelom triju najvećih društava u ukupnoj zaračunatoj bruto premiji. 
+Izvor: EIOPA
+
+3.2. Međupovezanost
+
+Kontinuirani rast imovine sektora financijskih usluga od 2012. godine primarno je realiziran kroz efektivni  rast imovine mirovinskih (12,7 %) i investicijskih fondova (20,2 %) te društava za osiguranje (5,3 %), dok se financijska imovina ostalih segmenata blago smanjila (-4,5 %). Spomenuti porast financijske imovine fondova i društava za osiguranje prvenstveno je bio transponiran u povećanje izloženosti prema državi putem dužničkih financijskih instrumenata, a manjim dijelom prema nefinancijskim poduzećima i kreditnim institucijama (slika 11.). Pritom u promatranom razdoblju nije zabilježeno sistemski značajno povećanje međupovezanosti između pojedinih segmenata sektora financijskih usluga.
+
+Direktna međupovezanost sektora financijskih usluga kroz vlasničke, dužničke i gotovinske oblike financijske imovine uglavnom je bila manja od 5 % ukupne financijske imovine pojedinog segmenta sredinom 2019. (slika 12.). Nešto veća izloženost (do 15 % financijske imovine) zabilježena je jedino kod društava za osiguranje prema investicijskim fondovima koja je determinirana njihovim interno utvrđenim ulagačkim strategijama. 
+
+Od direktne međusobne financijske povezanosti, bitno je značajnija indirektna povezanost segmenata sektora financijskih usluga kroz pojedine oblike ulaganja. Komparativno relativno visoki prinosi na državni dug u prethodnom višegodišnjem razdoblju, zakonski determinirani investicijski limiti, odnosno minimumi, regulatorni tretman obvezničkih ulaganja, posebno u domaće državne vrijednosne papire u domaćoj valuti glavni su razlozi zbog kojih su  društva za osiguranje, mirovinski i investicijski fondovi značajan dio svojih ulaganja usmjerili prema državi (slike 11. i 12.). Potraživanja od države na ime financijskih ulaganja tako su sredinom 2019. iznosila između 46,2 % financijske imovine društava za osiguranje do 67,7 % financijske imovine mirovinskih fondova, po čemu su u relativnim terminima pri vrhu distribucije zemalja EU-a (slika 5. u okviru 2. Rizici koji proizlaze iz uzajamne povezanosti sektora financijskih usluga  i javnog sektora) . 
+
+Koncentracija ulaganja u državne dužničke instrumente u okruženju niskih kamatnih stopa izlaže pružatelje financijskih usluga riziku reinvestiranja (slika 13.). Tijekom sljedeće tri godine dospijeva gotovo trećina državnih obvezničkih ulaganja ovog sektora pa bi se nastavak iste konzervativne investicijske strategije mogao značajno odraziti na profitabilnost cijelog sektora u srednjem roku (više o razlozima nastanka uzajamne povezanosti između financijskih institucija i javnog sektora, ali i rizicima za financijsku stabilnost koji proizlaze iz te veze može se vidjeti u okviru 2. Rizici koji proizlaze iz uzajamne povezanosti sektora financijskih usluga  i javnog sektora).
+
+Slika 11. Mirovinski i investicijski fondovi te društva za osiguranje bilježe najviše stope rasta financijske imovine (od 2012. do 2. tr. 2019.) 
+  
+Napomena: Boje vrhova (odnosno strelica) označuju godišnje stope rasta pojedinog sektora (odnosno doprinose rastu pojedinog sektora) na temelju transakcija u razdoblju od ožujka 2012. do kraja lipnja 2019. Kvadrati označuju sektore subjekata nadzora Hanfe. Međusobne relacije između sektora koji nisu subjekti nadzora Hanfe izostavljene su radi bolje preglednosti. Pojašnjenje oznaka sektora nalazi se u popisu kratica na kraju publikacije.
+Izvor: izračun Hanfe prema podacima iz financijskih računa (HNB)
+
+Slika 12. Međusobna izloženost financijskih posrednika te izloženost prema ostalim institucionalnim sektorima
+ 
+Napomena: Plavo označeni krugovi označuju subjekte nadzora Hanfe. Prikazana je međupovezanost sektora putem financijske imovine na dan 30.6.2019. Međusobne relacije između sektora koji nisu subjekti nadzora Hanfe izostavljene su radi bolje preglednosti. Pojašnjenje oznaka sektora nalazi se u popisu kratica na kraju publikacije.
+Izvor: izračun Hanfe prema podacima iz financijskih računa (HNB)
+
+U potrazi za višim povratima na ulaganja, pružatelji financijskih usluga polako se okreću sektoru nefinancijskih poduzeća, domaćem, ali sve više i inozemnom. Iako se još uvijek radi o razmjerno malim izloženostima (slika 14.), intenzivnija aktivnost institucionalnih investitora na domaćem tržištu kapitala odrazila se u rastu dioničkog indeksa. Nešto značajniju izloženost domaćim nefinancijskim poduzećima u iznosu većem od 50 % financijske imovine imala su, sukladno prirodi posla, jedino leasing i faktoring društva (slika 15.). 
+
+Slika 13. Struktura ulaganja sektora financijskih usluga s obzirom na vrstu investicije 
+ 
+Napomena: Prikazane su samo investicije društava za osiguranje, mirovinskih i investicijskih fondova koji zajedno čine gotovo 90 % imovine tržišta financijskih usluga. 
+Izvor: Hanfa
+
+Slika 14. Ulaganja u dionice i indikator ranjivosti sektora nefinancijskih poduzeća
+  
+Napomena: Više o izračunu ranjivosti sektora nefinancijskih poduzeća u HNB (2019.) Financijska stabilnost, br. 20. Horizontalna linija označuje dugoročni prosjek indikatora ranjivosti sektora nefinancijskih poduzeća.
+Izvori: HNB i Hanfa
+
+Slika 15. U strukturi portfelja leasing i faktoring društava dominira izloženost prema nefinancijskim poduzećima
+ 
+Napomena: Kod leasing društava prikazana je struktura nedospjele vrijednosti aktivnih ugovora, dok je kod faktoring društava prikazana struktura potraživanja.
+Izvor: Hanfa
+
+
+3.3. Tržišni rizici
+
+Intenziviranje protekcionizma te neizvjesnosti povezane s procesom izlaska Ujedinjene Kraljevine iz EU-u rezultirali su snažnim porastom ekonomske neizvjesnosti na međunarodnim financijskim tržištima tijekom 2019. (slika 17.).  Unatoč tome, nakon privremene izraženije korekcije krajem 2018., nastavljen je višegodišnji trend rasta cijena na međunarodnim dioničkim tržištima i njihovo udaljavanje od fundamenata (slika 16.). Tržišta dionica u europodručju zabilježila su blagi pad cijena početkom kolovoza 2019. kao reakciju na intenziviranje trgovinskog rata između SAD-a i Kine te naznaka mogućeg valutnog rata u pozadini globalnog usporavanja ekonomije. No najava daljnjeg ekspanzivnog djelovanja ESB-a u rujnu 2019. umanjila je bojazan investitora te je razina stresa na europskim financijskim tržištima stagnirala u 2019. (slika 18.). Istodobno je i FED po treći put u 2019. smanjio referentnu kamatnu stopu za dodatnih 0,25 p.b., što je ublažilo recesijska očekivanja mjerena nagibom krivulje prinosa, no ona su i dalje ostala izražena (slika 20.). 
+Slika 16. Nakon blage korekcije krajem 2018. na svjetskim dioničkim tržištima nastavljen je višegodišnji trend rasta
+ 
+Napomena: P/E omjer je relativna mjera vrijednosti koja u omjer stavlja cijenu dionice i zaradu po dionici koju promatrano poduzeće generira.
+Izvor: Bloomberg
+
+Slika 17. Ekonomska neizvjesnost i kolebljivost na financijskim tržištima u porastu
+ 
+Napomena: EPU indikator mjeri ekonomsku neizvjesnost koju generiraju ekonomske politike. Indikator za EU prikazuje prosječnu vrijednost indikatora za zemlje IT, DE, FR i UK. VIX indeks prikazuje očekivanu volatilnost dioničkog tržišta. Objavljuje ga Chicago Board Options Exchange (CBOE).
+Izvori: Economic Policy Uncertainty i St. Louis FED
+
+Slika 18. Razina financijskog stresa stagnirala u 2019.
+  
+Napomena: CLIFS indeks predstavlja indikator financijskog rizika koji uključuje šest mjera. Navedene mjere pokrivaju tržište kapitala, tržište obveznica i devizno tržište. Prikazano kretanje odnosi se na Hrvatsku, zemlje srednje i istočne Europe i Njemačku.
+Izvor: ESB
+
+Slika 19. Prinosi na desetogodišnje državne obveznice i kretanje referentnih kamatnih stopa 
+ 
+Napomena: Vertikalne linije označuju trenutke podizanja kreditnog rejtinga HR u investicijski rang.
+Izvori: Eurostat, Bloomberg i St. Louis FED
+
+
+Slika 20. Inverzija krivulje prinosa povijesno je bila pouzdan indikator krize
+ . 
+Napomena: Krivulje na slici prikazuju razliku između prinosa na desetogodišnje i dvogodišnje državne obveznice, dok sivo označena područja označuju recesije u SAD-u (više o definiciji na adresi). Crveno označena područja označuju razdoblja u kojima je nastupila inverzija krivulje prinosa na US obveznice.
+Izvori: St. Louis FED i ESB
+
+Akomodativne monetarne politike vodećih centralnih banka odrazile su se u nastavku trenda pada prinosa na dugoročne državne obveznice koji su smanjeni na povijesno niske razine (slika 19.). Značajno su smanjeni i prinosi na dugoročne državne obveznice RH za čak 1,45 postotnih bodova od početka 2019. godine pa je prinos krajem rujna iznosio 0,59 %.  Pad prinosa posljedica je, između ostalog, povratka Hrvatske u investicijski razred  te posljedičnog proširenja skupa potencijalnih investitora. Time je već prisutno okruženje niskih kamata dodatno naglašeno pa su dionička tržišta u trećem tromjesečju 2019. bila u znaku potrage za prinosima. Tako je i domaće dioničko tržište u 2019. zabilježilo blagi rast cijena nakon dvogodišnje stagnacije. Međutim postkrizni oporavak cijena na domaćem tržištu i dalje znatno zaostaje za usporedivim zemljama SIE, ali i zemljama zapadne Europe (slika 21.). Povezano s time, u rujnu 2019. blago je porasla volatilnost na domaćem dioničkom tržištu, iako je njezina  razina razmjeno niska u usporedbi s kriznim epizodama iz prošlosti (slika 22.) pa nema naznaka sistemskog stresa na domaćem financijskom tržištu (slika 18.). 
+Slika 21. Nakon dvogodišnje stagnacije cijene na domaćem dioničkom tržištu blago se oporavljaju u 2019., no oporavak i dalje zaostaje za usporedivim zemljama SIE
+ 
+Napomena: Prikazane su prosječne vrijednosti najlikvidnijih dioničkih indeksa u pojedinoj zemlji EU-a. Zemlje SIE čine: BG, CZ, EE, HU, LV, LT, PL, RO, SI i SK.
+Izvor: Bloomberg, Hanfa
+
+Slika 22. Volatilnost CROBEX indeksa blago je porasla u 2019.
+ 
+Napomena: Volatilnost CROBEX indeksa procijenjena je EWMA modelom (model eksponencijalno ponderiranih pomičnih prosjeka koji veću važnost daje recentnim opažanjima) uz prikazane različite parametre izglađivanja.  
+Izvor: Zagrebačka burza, izračun Hanfe 
+Osim dionica, veći povrati na ulaganja tražili su se i na tržištu nekretnina, čije su cijene  nastavile rasti i u trećem tromjesečju 2019. Iako je ciklički oporavak cijena nekretnina u Hrvatskoj krenuo nešto kasnije nego u drugim zemljama EU-a (slika 24.), geografski je on izrazito neujednačen (prvenstveno je koncentriran u gradu Zagrebu i na Jadranu) pa se na pojedinim segmentima tržišta kumulira rizik precijenjenosti (slika 23.). Iako su prinosi na ulaganja u poslovne nekretnine uglavnom stagnirali tijekom posljednjih godinu dana, te su investicije i dalje poželjnija alternativa tradicionalnim oblicima ulaganja (slike 25. i 26.), a na koje se odlučuju posebno neka društva za osiguranje, što ih izlaže mogućim znatnijim gubitcima u scenariju nagle korekcije cijena (slika 27.).
+Slika 23. Godišnje stope rasta cijena stambenih nekretnina i odstupanje cijena od makroekonomski utemeljene razine
+  
+Izvori: DZS i HNB
+
+
+Slika 24. Cijene nekretnina u snažnom su porastu u većini zemalja EU-a
+ 
+Napomena: Prikazane su prosječne vrijednosti indeksa cijena nekretnina u pojedinoj zemlji EU-a. Zemlje SIE čine: BG, CZ, EE, HU, LV, LT, PL, RO, SI i SK.
+Izvor: Eurostat
+
+
+Slika 25. Razlika prinosa na ulaganja u poslovne nekretnine i prinosa na državne desetogodišnje obveznice 
+  
+Napomena: Prikazana razlika prinosa samo je pokazatelj trenda kretanja povrata na ulaganja u poslovne nekretnine i državne obveznice jer su korišteni podaci o prinosima na nekretnine procijenjeni te nisu nužno reprezentativni za cijelo tržište poslovnih nekretnina u Hrvatskoj.
+Izvori: Bloomberg i Propertas
+
+Slika 26. Izloženost društava za osiguranje tržištu nekretnina, izražena kao udio ukupnih ulaganja
+ 
+Izvor: EIOPA
+
+
+Slika 27. Značajna je raspršenost udjela ulaganja u nekretnine po pojedinim društvima, a time iz izloženost riziku korekcije cijena 
+ 
+Napomena: Box-plot dijagram prikazuje standardne kvantile distribucije po društvima, pri čemu x označava prosjek. 
+Izvor: Hanfa
+
+
+3.4. Profitabilnost i kapitaliziranost pružatelja financijskih usluga
+
+Profitabilnost sektora financijskih usluga bila je na zadovoljavajućim razinama u trećem tromjesečju 2019. unatoč izazovnom okruženju generalno niskih kamatnih stopa (slika 28.). Takvo okruženje trenutačno najviše opterećuje poslovanje društava za osiguranje, i to onih koja se bave životnim osiguranjima jer gotovo 90 % njihova portfelja ugovarateljima osiguranja nosi određeni garantirani prinos ugovoren u razdobljima kada su kamatne stope bile znatno više. Iako još nisu zabilježene značajne promjene u strukturi ulaganja društava za osiguranje (slike 29. i 30.), dugoročne obveze društava u prolongiranom razdoblju niskih prinosa stvarat će motiv za preuzimanjem viših investicijskih rizika i postupno mijenjati investicijske politike. 
+
+Slika 28. Profitabilnost društava za osiguranje pod pritiskom okružja niskih kamatnih stopa
+ 
+Izvor:  Hanfa
+
+
+Slika 29. Domaća društva za osiguranje komparativno više ulažu u obveznice u odnosu na ostale zemlje EU-a
+ 
+Izvor: EIOPA
+
+Slika 30. Društva za osiguranje polagano se okreću prekograničnim izloženostima
+  
+Izvor: EIOPA
+
+Profitabilnost segmenta neživotnih osiguranja također se kontinuirano smanjivala tijekom 2019. zbog povećanih izdataka za štete, što unatoč ekonomskom rastu i intenziviranju kreditne aktivnosti tijekom prvih devet mjeseci 2019. nije bilo u cijelosti kompenzirano kroz povećanje broja ugovora za 6,15 %, odnosno zaračunate bruto premije za 11,6 %. 
+
+Iako društva rast kvote šteta  dijelom amortiziraju kroz veću efikasnost u dijelu troškova poslovanja (slika 31.), domaći segment neživotnih osiguranja manje je efikasan u usporedbi s drugim europskim tržištima osiguranja (slika 32.). Problem efikasnosti poslovanja posebno je izražen kod nekih društava koja imaju značajan tržišni udio u segmentu neživotnih osiguranja.
+
+Slika 31. Bruto kvote za skupinu neživotnih osiguranja
+ 
+Izvor: Hanfa
+
+Slika 32. Kvota troškova domaćih društava relativno je visoka u usporedbi s drugim zemljama EU-a
+ 
+Izvor: EIOPA
+ 
+Pokazatelji solventnosti  sektora osiguranja razmjerno su stabilni, uz medijalni omjer solventnosti koji znatno nadilazi regulatorni minimum  (slika 33.). Pomak ukupne distribucije kapitaliziranosti osiguravatelja u trećem tromjesečju 2019. prema dolje primarno je posljedica daljnjeg smanjenja diskontne stope pri određivanju tehničkih pričuva. S obzirom na to da je  utjecaj niskih kamatnih stopa na tehničke pričuve, odnosno obveze društava za osiguranje bio veći od utjecaja koje niži prinosi imaju, kroz inverzni odnos prinosa/cijene, na vrijednost obvezničke imovine društava, u tom su razdoblju smanjena vlastita sredstva društava nužna za pokriće potrebnog solventnog kapitala.
+
+Slika 33. Omjeri solventnosti društava za osiguranje
+ 
+Izvor: Hanfa
+
+Rast prinosa gotovo cjelokupne fondovske industrije i u trećem tromjesečju 2019. generiran je prvenstveno porastom cijene domaćih državnih dužničkih vrijednosnih papira uslijed pada prinosa, ali i rastom dioničkih tržišta tijekom trećeg tromjesečja 2019. (slike 34. - 36.).
+
+Slika 34. Prosječni godišnji prinosi UCITS fondova ponderirani udjelom u imovini
+ 
+Izvor:  Hanfa
+
+Slika 35. Godišnji prinosi Mirex indeksa
+ 
+
+Izvor:  Hanfa
+
+Slika 36. Prinosi dobrovoljnih mirovinskih fondova
+ 
+Izvor:  Hanfa
+
+Blago intenziviranje potražnje za investicijskim aktivnostima na domaćem tržištu, uz tendenciju rasta aktivnosti na inozemnim tržištima, poboljšalo je profitabilnost investicijskih društava u trećem tromjesečju 2019. godine. S obzirom na oporavak profitabilnosti investicijskih društava u 2019. (slika 37.) blago je porasla i kapitaliziranost na razini sustava (slika 38.). 
+
+Rast profitabilnosti tijekom trećeg tromjesečja 2019. ostvarila su i društva za upravljanje investicijskim fondovima kroz veći iznos upravljačkih naknada s obzirom na povećanje iznosa imovine kojom upravljaju. Istodobno je smanjen  povrat od imovine društava za upravljanje mirovinskim fondovima, što je posljedica zakonskih izmjena s početka 2019. godine, koje su umanjile iznose ulaznih i upravljačkih naknada kod obveznih mirovinskih fondova te ukidanja ulaznih naknada kod dobrovoljnih mirovinskih fondova.
+
+Slika 37. Profitabilnost investicijskih društva i društava za upravljanje mirovinskim i investicijskim fondovima
+ 
+Izvor: Hanfa
+
+Slika 38. Adekvatnost kapitala investicijskih društava u blagom je porastu
+ 
+Napomena: Stopa ukupnog kapitala omjer je redovnog ukupnog kapitala investicijskog društva i ukupnog iznosa izloženosti riziku.
+Izvor: Hanfa 
+
+
+3.5. Rizik likvidnosti
+
+Usporedbom medijalnih udjela likvidne imovine u ukupnoj imovini društava za osiguranje na razini EU-a i u RH, vidljive su značajne razlike u iznosima, ali i u njihovim kretanjima u promatranom razdoblju (slika 39.). Osim što je medijalni udio likvidne imovine društava za osiguranje u RH za desetak postotnih bodova veći od predmetnog pokazatelja na razini EU-a, on ima i kontinuirani trend rasta (porast za 3,3 p.b. u odnosu na kraj 2017.), dok je na razini EU-a primjetan pad medijalnog udjela likvidne imovine u ukupnoj imovini društava za osiguranje (smanjenje za -0,9 p.b. u istom razdoblju). Stoga bi se promatranjem samo medijalnog udjela likvidne imovine moglo zaključiti da rizik likvidnosti u RH ne opterećuje značajno segment društava za osiguranje. Međutim, distribucija pokazatelja likvidnosti po pojedinim društvima pokazuje visoki stupanj rasipanja, što sugerira da iako je izloženost riziku likvidnosti cijelog tržišta osiguranja razmjerno niska, njegovi pojedini segmenti mogu uslijed određenih negativnih kretanja na tržištu u kratkom roku postati nelikvidni.
+
+Slika 39. Rasipanje pokazatelja likvidnosti domaćih društava za osiguranje, odnosno pokazatelja likvidnosti industrije osiguranja u pojedinim zemljama EU-a
+ 
+Izvori: EIOPA i Hanfa
+
+Na predmetni pokazatelj veoma značajan utjecaj ima sada već dugotrajno okruženje niskih kamatnih stopa, koje nerijetko imaju i negativan predznak, a koje se značajnije odrazilo na izmjenu ulagačke strategije društava u EU-a nego onih u RH s obzirom na komparativno još uvijek razmjerno visoke prinose koje generiraju starija hrvatska državna dužnička izdanja. Tako društva u EU-u u „lovu“ na prinos preuzimaju sve više rizika primarno kroz ulaganje u profitabilnije, ali mahom i manje likvidne instrumente, kao što su korporativne obveznice, ponekad i razmjeno niskog kreditnog rejtinga. Udio korporativnih obvezničkih ulaganja na razini EU-a (32,6 %), na kraju 2018. bio je višestruko veći nego u RH (4,9 %).
+
+S druge strane društva za osiguranje iz RH tradicionalno najviše ulažu u državne obveznice (63,6 % ukupnih ulaganja na kraju 2018.), koje se smatraju jednim od najlikvidnijih oblika ulaganja. Prosjek ulaganja društava za osiguranje u državne obveznice na razini EU-a iznosi svega 31,5 %. Za ulaganja u domaće državne obveznice pretpostavljen je najviši stupanj likvidnosti jednak likvidnosti gotovog novca ili depozita. Međutim, s obzirom na trenutno vrlo ograničenu mogućnost upotrebe domaćih državnih obveznica u operacijama sa ESB-om  te specifičnosti okvira za provođenje monetarne politike u Hrvatskoj , domaća društva za razliku od onih iz europodručja još uvijek ne mogu na jednak način koristiti državne obveznice za financiranje likvidnosti. Usto, uzevši u obzir nisku razinu sekundarne likvidnosti domaćih obvezničkih izdanja,  za utvrđivanje likvidnosti domaćeg tržišta osiguranja pretpostavljen je niži stupanj utrživosti državnih obveznica. Tako čak i razmjerno umjereno smanjenje pretpostavljenog pondera likvidnosti tih ulaganja s obzirom na njihovu visoku zastupljenost značajno umanjuje udio likvidne imovne kako na razini prosjeka sustava tako i na razini pojedinog društva (slika 40.). 
+
+Slika 40. Simulacija smanjenja udjela likvidne imovine s obzirom na pretpostavljenu utrživost državnih obvezničkih izdanja
+ 
+Napomena: Simulirano smanjenje likvidnosti državnih obveznica za 20%, proizlazi iz EIOPA-ine metodologije konstrukcije pokazatelja likvidnosti koja svakom obliku imovine dodjeljuje jedan od sljedećih pondera likvidnosti 0%, 30%, 80% ili 100%. S obzirom na razmjerno veliki raspon središnjih pondera te da ponder od 30% u suštini implicira razinu nelikvinosti državnih obveznica koja je značajna i za krizne epizode, simulirano je smanjenje likvidnosti od 50%, što je sredina raspona pretpostavljene utrživosti. 
+Izvor: Hanfa
+
+Likvidnost UCITS fondova također je bila stabilna tijekom trećeg tromjesečja 2019. s obzirom na uravnoteženost uplata u fondove i povlačenja iz njih. Tijekom prva tri tromjesečja 2019. zabilježena su pozitivna neto izdanja udjela, što se prvenstveno odnosi na ulazak u obvezničke fondove (slika 41.). Iako je u prvom dijelu godine taj rast neto uplata u obvezničke fondove bio posljedica regulativom uvjetovane reklasifikacije i posljedičnog prelijevanja sredstava iz novčanih u kratkoročne obvezničke fondove, isti se trend nastavio i u trećem tromjesečju 2019. pa se može zaključiti kako investitori jedan dio viškova usmjeravaju na tržište kapitala, ali i dalje uz razmjernu nesklonost preuzimanju rizika. Iako u trenutnim razmjerno povoljnim makroekonomskim i tržišnim uvjetima nema likvidnosnih pritisaka, u slučaju određenih poremećaja (šokova) likvidnost fondova značajno će ovisiti o strukturi njihova portfelja, odnosno vrsti fonda. Pri tome utaživost i najlikvidnijih oblika imovine, poput državnih obveznica, značajno može divergirati ovisno o kreditnoj kvaliteti izdavatelja (vidjeti okvir 2. Rizici koji proizlaze iz uzajamne povezanosti sektora financijskih usluga  i javnog sektora). U takvim kriznim uvjetima dodatni pritisak na likvidnost investicijskih fondova proizlazi iz komparativno razmjerno lakog povlačenja investitora u odnosu na neke druge oblike financijskog ulaganja. 
+
+Slika 41. Likvidnost UCITS fondova je stabilna
+  
+Izvor: Hanfa
+
+3.6. Operativni rizici
+
+Operativni je rizik i tijekom trećeg tromjesečja 2019. bio na povišenoj razini, ponajprije s obzirom na tada još aktualnu neizvjesnost oko uvjeta i vremenskog okvira Brexita jer pitanja vezana uz Brexit obuhvaćaju širok spektar rizika (ne samo operativni), kao što su kontinuitet poslovanja i rizik zaraze te makroekonomske posljedice. Istodobno su geopolitičke nesigurnosti nastavile predstavljati rastući rizik za globalna financijska tržišta i ekonomske izglede europodručja. 
+Kibernetički rizik i dalje je jedan od najznačajnih oblika operativnog rizika u financijskom sektoru, a očekuje se i daljnji rast osjetljivosti sustava na kibernetičke incidente u srednjem i dugom roku, posebno u pogledu kontinuiteta poslovanja i integriteta vlasničkih podataka. Stoga prevencija kibernetičkog kriminala stvara sve veći izazov za pružatelje financijskih usluga pa raste potreba za ulaganjem u nove sustave informatičkih tehnologija te se stvara pritisak k modernizaciji informatičke infrastrukture. S druge strane, učinkovitija informatička struktura „tradicionalnog“ financijskog sektora stvara konkurentnost fintech i bigtech tvrtkama. U trećem tromjesečju 2019. nije zabilježen nijedan veći kibernetički incident u europodručju, kao ni u Hrvatskoj. 
+
+ 
+Okvir 1. Indeks sentimenta za Hrvatsku: jesu li domaći investitori iracionalni?
+
+Domaće je tržište kapitala, nakon perioda ekspanzije i rasta tijekom sredine 2000-ih, s eskalacijom globalne financijske krize i njezinim prodiranjem u domaću realnu i financijsku sferu značajno kontrahiralo. Unatoč oporavku privredne aktivnosti od 2015. efekti gospodarskog rasta teško se prelijevaju na domaće tržište kapitala, koje uglavnom stagnira na niskim razinama aktivnosti (slika 1.).  U tom su periodu određeni idiosinkratski događaji neutralizirali periodične naznake blagog oporavka tržišta i sustavno oživljavanje investicijskih aktivnosti kakvo je zabilježeno na ostalim burzovnim tržištima zemalja EU-a (slika 21. u poglavlju 3. Pregled rizika u sektoru financijskih usluga). 
+
+Slika 1. Prosječan udio prometa dionicama u BDP-u (u razdoblju od 2014. do 2018.)
+ 
+Izvori: Svjetska banka, WFE
+
+Kretanja na financijskim tržištima, iako prema klasičnoj teoriji proizlaze samo iz ekonomskih fundamenata, prema bihevioralnoj teoriji značajnim su dijelom determinirana subjektivnim procjenama i očekivanjima investitora o budućim kretanjima u realnom i financijskom segmentu kako nacionalnih ekonomija tako i globalnog tržišta. S druge strane, na očekivanja osim realnih kretanja utječu i događaji u svim sferama privrede te različite informacije iz brojnih izvora, koje ne moraju uvijek biti potpune, točne i istinite (mediji, financijske institucije, regulatori, politike), ali se ugrađuju u investicijske odluke i determiniraju financijske odnose. 
+
+Izmjeriti subjektivnost i očekivanja nije jednostavno, ali je važno jer to određuje razinu pouzdanja investitora u tržište kapitala te može sugerirati u kojoj su mjeri očekivanja investitora usklađena s makroekonomskim čimbenicima. Iz tog je razloga konstruiran indeks sentimenta investitora za domaće tržište kapitala, kojim se opisuje zajedničko raspoloženje i očekivanja svih investitora o sadašnjim i budućim fluktuacijama. U tu su svrhu konstruirana dva pokazatelja – izravni indeks investicijskog sentimenta i neizravni indeks investicijskog sentimenta . 
+
+Izravni indeks investicijskog sentimenta (IIIS) konstruiran je na temelju podataka o broju pretraživanja ključnih riječi dobivenih preko platforme Google Trend  (engl. Google Search Volume Index, GSVI). Inicijalno je pretraživan popis od ukupno 60 riječi odabranih iz financijskih rječnika . One riječi za koje broj pretraživanja nije bio značajan  izbačene su iz razmatranja pa je konačan skup riječi korištenih za  konstrukciju pokazatelja IIIS metodom glavnih komponenti  sveden na ukupno 40 pojmova . Metodom glavnih komponenti (engl. Principal Component Analysis, PCA), koja se standardno primjenjuje pri konstrukciji tog indeksa , varijabilnost pretraživanog skupa riječi opisana je s nekoliko serija, koje se nazivaju glavne komponente . Glavna je prednost izravne metode uzimanje u obzir, uz psihološke dimenzije, i socioekonomskih karakteristika investitora, čime se nastoje obuhvatiti heterogena očekivanja investitora, koji se po svojim obilježjima mogu jako razlikovati (ponajprije kao mali odnosno institucionalni investitori). Glavni je nedostatak izravne metode ograničena veličina uzorka i posljedična reprezentativnost. 
+
+Pored izravnog, konstruiran je i neizravni indeks investicijskog sentimenta (NIIS),  koji se temelji na (makro)ekonomskim pokazateljima agregiranima u jedan zajednički indeks. Prednost je takvog pristupa jednostavnost izračuna u svakom trenutku bez značajnih vremenskih pomaka. Ipak, ponekad je teško odrediti koje pokazatelje uključiti u izračun, o čemu značajno ovise rezultati analize. Za konstrukciju indeksa korišteni su sljedeći pokazatelji: 
+1. 〖AVDC〗_t (engl. Advance-Decline Ratio) – omjer broja dionica kojima se cijena smanjila i broja dionica kojima je cijena porasla u promatranom vremenskom razdoblju, pri čemu rastuće (padajuće) vrijednosti tog indikatora upućuju na optimizam (pesimizam) investitora 
+2. promet na tržištu dionica, koji bi trebao biti pozitivno koreliran sa sentimentom investitora, tj. veće vrijednosti tog pokazatelja ukazuju na povećani optimizam
+3. kamatne stope kotirane na međubankovnom tržištu (ZIBOR_1 mj.) kao aproksimacija troška investiranja
+4.  indeks toka novca (engl. Money Flow Index, 〖MFI〗_t) , koji neizravno mjeri pritisak prodaje odnosno kupnje na dioničkom tržištu uvažavajući odnos cijena i volumena trgovanja   
+5. pokazatelj 〖RSI〗_t (engl. Relative Strength Index) ,koji pri mjerenju pritiska prodaje odnosno kupnje u obzir uzima samo cijene, ne i volumen trgovanja. Osim navedenih, u literaturi se često koriste  i neki dodatni pokazatelji, no zbog slabe prediktivnosti i/ili nedostatka dovoljno dugih vremenskih serija nisu uključeni u izračun . S obzirom na to da je relevantna literatura pokazala da će promjena spomenutih pokazatelja uzrokovati promjenu neizravnog indeksa sentimenta investitora s nekim vremenskim odmakom, za izračun NIIS-a upotrijebljena je proširena metoda glavnih komponenti , koja sve pokazatelje, osim kamatne stope, uključuje u izračun s vremenskim pomakom. 
+
+Obje metode konstrukcije indeksa sentimenta sugeriraju kako su investitori u pretkriznom razdoblju bili optimistični pa je povjerenje u tržište bilo na vrhuncu u razdoblju od kraja 2007. do kraja 2008. (slika 2.). No s početkom financijske krize započeo je trend pada povjerenja u tržište, koji je trajao sljedećih pet godina. Od 2013. godine nadalje nisu zabilježena značajna kolebanja u procijenjenim indeksima unatoč povoljnijim makroekonomskim kretanjima i uvjetima na financijskim tržištima, što sugerira kako su investitori ostali razmjerno suzdržani u pogledu svojih očekivanja te da nema naznaka njihovom iracionalnom ponašanju, posebno u kontekstu sveprisutne potrage za prinosima. Treba međutim istaknuti kako konstruirani indeksi (posebno izravni) u većoj mjeri opisuju sentiment na domaćem tržištu manje zastupljenih malih investitora, koji formiraju svoja očekivanja temeljem istraživanja putem platforme Google. Pretpostavka je da za domaće tržište bitno značajniji institucionalni investitori koriste druge izvore informacija koje ugrađuju u svoja očekivanja (Bloomberg i Reuters). 
+Slika 2. Usporedba indeksa investicijskog sentimenta i indeksa financijskih uvjeta   Napomena: Prikazani izravni indeks investicijskog sentimenta izračunat je kao standardizirana linearna kombinacija prve četiri glavne komponente, kojima je objašnjeno ukupno 50 % varijabilnosti ulaznih podataka, pri čemu su kao ponderi korišteni udjeli svake od spomenute četiri komponente u postotku varijabilnosti koja je njima objašnjena, tj. ponder i –te komponente je  λ_i/(λ_1+λ_2+λ_3+λ_4 )  za i=1,2,3,4, pri čemu je λ_i  odgovarajuća svojstvena vrijednost i –te glavne komponente. Prikazani neizravni indeks investicijskog sentimenta izračunat je kao standardizirana linearna kombinacija prve dvije glavne komponente, kojima je objašnjeno ukupno 88 % varijabilnosti ulaznih podataka, pri čemu su kao ponderi korišteni udjeli svake od spomenute dvije komponente u postotku varijabilnosti koja je njima objašnjena, tj. ponder i –te komponente je λ_i/(λ_1+λ_2 )  za i=1,2, pri čemu je λ_i  odgovarajuća svojstvena vrijednost i –te glavne komponente.
+Izvor: EIZG, Hanfa
+
+Uz već prisutni rast kreditne aktivnosti i cijena nekretnina, od sredine 2019. zabilježen je blagi opravak aktivnosti i na domaćem tržištu kapitala. To sugerira kako je u Hrvatskoj financijski ciklus, mjeren na sva tri tržišta – kreditnom, nekretninskom i tržištu kapitala, u uzlaznoj fazi. Iako postoje određene zabrinutosti u pogledu fundamentalne utemeljenosti i time stabilnosti razine cijena nekretnina, koje su u Hrvatskoj tradicionalno iznimno atraktivna investicija često financirana kreditiranjem uz zalog tih istih nekretnina, procjene odstupanja omjera kredita i dohotka privatnog sektora od dugoročnih trendova trenutno ne sugeriraju kako je financijski ciklus u fazi pregrijavanja . Naznake pregrijavanja u vidu značajnog odstupanja dioničkih cijena od fundamenata ne pokazuje ni domaće tržište kapitala (slika 3.), za razliku od nekih stranih dioničkih tržišta (slika 16. u poglavlju 3.3 Tržišni rizici). Stoga trenutno nije izražen rizik revalorizacije domaće dioničke imovine investitora koji u okružju niskih kamatnih stopa na depozite te u uvjetima visoke likvidnosti domaćeg financijskog sustava još uvijek u značajnijoj mjeri ne realiziraju strategije traženja većih povrata na ulaganja na domaćem dioničkom tržištu. 
+
+Slika 3. Odstupanje P/E omjera CROBEX-a od dugoročnog trenda    
+Izvor: Hanfa
+ 
+
+ 
+Okvir 2. Rizici koji proizlaze iz uzajamne povezanosti sektora financijskih usluga  i javnog sektora
+
+Imovina sektora financijskih usluga kontinuirano raste od 2012. godine, pri čemu je priljev novih sredstava prvenstveno usmjeren na povećanje izloženosti prema državi putem dužničkih vrijednosnih papira (slika 11. u poglavlju 3.2. Međupovezanost). Posljedično, na kraju lipnja 2019. segmenti sektora financijskih usluga bili su visoko povezani putem izloženosti prema državi (slika 12. u poglavlju 3.2. Međupovezanost) iako direktna povezanost pojedinih industrija sektora financijskih usluga nije značajna. 
+
+Time je, uz činjenicu da javni sektor kroz fiskalnu politiku značajno utječe na ukupnu makroekonomsku stabilnost, dodatno naglašen sistemski značaj i uloga javnog sektora u očuvanju stabilnosti sektora financijskih usluga. Nužno je stoga dublje razumijevanje odnosa između javnog i sektora financijskih usluga, što uključuje sve direktne i indirektne kanale njihove interakcije. Pri tome je važno taj sustav gledati holistički, odnosno te sektore i identificirane kanale međupovezanosti promatrati zajedno kao jednu uzajamno povezanu i nerazdvojivu cjelinu, koja integralno određuje stabilnost financijskog sustava neke zemlje (slika 1.). 
+
+Direktna i indirektna povezanost države i financijskog sektora
+U literaturi nema mnogo radova koji se bave kanalima međupovezanosti između javnog i sektora financijskih usluga te je većina istraživanja usmjerena na analizu međupovezanosti banaka i države . No uz određene razlike i industrijske specifičnosti, identificirani kanali propagacije sistemskog rizika između banaka i javnog sektora jednako su prisutni i u sektoru financijskih usluga. 
+Suodnos financijskog i javnog sektoru u kontekstu nacionalne privrede integrirane u globalne ekonomske tokove pojednostavljeno možemo opisati kroz tri glavna odnosa (slika 1.): 1) makroekonomska kretanja i fiskus, 2) fiskus i financijski sektor te 3) financijski sektor i makroekonomska kretanja. 
+
+Slika 1. Konceptualni prikaz međuovisnosti sektora financijskih usluga i države
+ 
+Izvor: Hanfa
+
+Fundamentalne karakteristike lokalne ekonomije, odnosno domaće makroekonomske neravnoteže trebale bi se odražavati u percipiranom kreditnom riziku države, odnosno javnog sektora. Pritom treba naglasiti kako svaki oblik ulaganja sa sobom nosi određene rizike, pri čemu se ulaganje u državne vrijednosne papire smatra relativno sigurnijim oblikom ulaganja, no ono nikako nije bezrizično. S druge strane, stabilan i odgovoran fiskus značajno utječe na makroekonomska kretanja i stabilnost kroz strukturu kamatnih stopa, poreznu politiku, javno-investicijsko djelovanje, odnosno općenito fiskalnu politiku. 
+Pored  strukturnih obilježja i cikličkih kretanja u domaćoj privredi, kreditni rizik javnog sektora pod utjecajem je i kretanja, odnosno rizika u sektoru financijskih usluga, kako domaćeg tako i globalnog. Empirijska istraživanja  pokazala su kako je kreditni rizik države  snažno povezan s kretanjima na globalnim financijskim tržištima (sentimentom investitora i sklonosti preuzimanju rizika, krivuljom prinosa, investicijskim kapitalnim tokovima i sl.). Osim toga, prelijevanje ranjivosti između financijskog sektora i fiskusa direktno proizlazi iz visoke izloženosti financijskih institucija državi putem ulaganja u vrijednosne papire. Stoga likvidnosni problemi u financijskim institucijama mogu dovesti do nagle rasprodaje obveznica, što za posljedicu može imati značajna pad cijena te likvidnosni pritisak na obvezničko tržište. Da je odnos kreditnog rizika javnog sektora i likvidnosti obvezničkih izdanja u određenom smislu dvosmjeran, pokazale su i mjere otkupa državnih obveznica Europske središnje banke. Naime, pružanjem likvidnosti bankama kroz programe otkupa obveznica ESB je direktno utjecao na likvidnost obvezničkog tržišta, ali indirektno i na kreditni rizik izdavatelja . Taj se odnos rizičnosti financijskog i javnog sektora potencira u ekstremnim situacijama, kao što je insolventnost nekog od sistemski važnih institucionalnih investitora, što bi stvorilo pritisak na državnu intervenciju i spašavanje (eng. bail-out). U takvim situacijama posljedični porast javnog duga negativno se može odraziti na cijenu državnih obveznica, ali i ostalih vrijednosnih papira na tržištu te u drugom krugu može dodatno negativno utjecati na financijski sustav. Jednako tako, budući da se vrijednosnim papirima aktivno trguje na financijskim tržištima, bilo kakav šok u javnom sektoru vrlo se brzo može preliti na bilance financijskih institucija, s potencijalom da dovede u pitanje funkcioniranje cjelokupnog sustava.
+
+Konačno, osim direktnih kanala, stabilnost financijskog i javnog sektora međusobno je povezana i posredno preko djelovanja na cjelokupno gospodarstvo. Stoga spomenuta uzajamna ovisnost sektora financijskih usluga i javnog sektora ima značajne implikacije za očuvanje financijske stabilnosti. 
+
+Iako su s aspekta financijske stabilnosti iznimno važni svi spomenuti kanali međupovezanosti javnog sektora i financijskog sustava, u nastavku će se detaljnije analizirati njihova direktna povezanost kroz investicijski kanal. Direktna izloženost financijskog sustava državi primarno se ostvaruje putem ulaganja financijskih institucija u vrijednosne papire. Postoje tri ključna razloga zbog kojeg financijske institucije ulažu u javni dug: a) likvidnosne potrebe, b) investicijski razlozi i c) regulatorni propisi. U kontekstu analize sistemskih rizika i očuvanja financijske stabilnosti potrebno je problematizirati sva tri spomenuta razloga. 
+
+Ulaganje u (domaće) državne obveznice u međunarodnoj regulativi financijskih sustava najčešće je prepoznato i utvrđeno kao jedan od najlikvidnijih i lako utrživih oblika imovine (tržišna likvidnost). Osim pružanja likvidnosti putem sekundarnih tržišta, ulaganje u državne obveznice  važno je za proces upravljanja likvidnošću i s aspekta korištenja državnih vrijednosnih papira kao kolaterala u mnogim financijskim transakcijama (npr. repo transakcije, posebno s centralnom bankom – financiranje likvidnosti).
+
+Međutim, regulativom pretpostavljena likvidnost i lakoća utrživosti instrumenata državnog duga često nije značajno korelirana sa stvarnom (tržišnom) utrživosti dužničkih izdanja, posebno izdavatelja komparativno niže kreditne kvalitete. Naime, istraživanja su pokazala kako na tržišnu likvidnost obveznica značajno utječu specifične karakteristike, kao što su duracija, rejting, odnosno kreditna kvalitetaizdavatelja, vrijeme do dospijeća te iznos izdanja . 
+
+Ta divergencija regulativom pretpostavljene i stvarne likvidnosti (odnosno utjecaj spomenutih značajki na likvidnost) posebno dolazi do izražaja tijekom perioda financijskih poremećaja, kada je likvidnosni potencijal tih ulaganja najpotrebniji. Osim za potrebe likvidnosti, financijske institucije mogu ulagati u državne vrijednosne papire i zbog investicijskih razloga ako oni nude povoljan omjer povrata na investiciju i preuzetog rizika u komparaciji s drugim investicijskim klasama. 
+
+Međutim, visoka stopa izloženosti pojedinih financijskih sustava domaćoj državi, posebno u kriznim vremenima, nije nužno posljedica isključivo racionalne investicijske odluke, već može biti uvjetovana i postojećom razinom povezanosti financijskog i javnog sektora, ekonomsko-političkim kontekstom te regulatornim tretmanom tih izloženosti. Naime, postojeći regulatorni okvir djeluje na sklonost ulaganju u državne obveznice implicitno kroz povlašteni regulatorni tretman tih izloženosti, posebno ako je riječ o izloženostima prema domaćoj državi u nacionalnoj valuti  u dijelu ispunjavanja kapitalnih i prethodno spomenutih likvidnosnih zahtjeva  s obzirom na to da se te izloženosti ne korigiraju za kreditni rizik izdavatelja. 
+
+S druge strane, ulaganje u državne vrijednosne papire eksplicitno je stimulirano kroz zakonski definirane razmjerno visoke limite ili minimalne pragove izloženosti prema državnom dugu. Spomenuto na neselektivan način jača spregu (i ovisnost) između financijskog i (domaćeg) javnog sektora.
+
+Navedeni ekonomski i regulatorni razlozi zbog kojih financijske institucije ulažu u državne vrijednosne papire posebno se potenciraju u kriznim periodima. Empirijska literatura pokazala je da krizno ponašanje (kakvo je opaženo nakon globalne financijske krize u 2008. i europske dužničke krize u 2011.) vrlo često bude popraćeno značajnim povećanjem izloženosti financijskih institucija ili prema domaćoj državi ili prema visokokvalitetnim državnim izdanjima. Postoji nekoliko teorijskih pretpostavki koje objašnjavaju to krizno ponašanje financijskih institucija, pri čemu su, uz likvidnosni potencijal povezan s operacijama kreditnih institucija sa središnjom bankom, najistaknutiji investicijski razlozi. Naime, u kriznim razdobljima s rastom averzije prema riziku raste i opća razina zahtjevnih prinosa pa državne obveznice postaju komparativno privlačna investicija u odnosu na alternativne investicijske mogućnosti uz koje se veže znatno viši stupanj rizika (npr. dionice). Međutim, istodobno uglavnom raste fragmentiranost tržišta državnog duga pa krajnje konzervativni investitori bježe u sigurnija ulaganja (oblike i izdavatelje – engl. flight to safety). 
+
+Stoga je u kriznim periodima izraženija divergencija prinosa na državne obveznice sukladno (percipiranom) kreditnom rejtingu izdavatelja, odnosno do izražaja više dolaze fundamentalne karakteristike, koje su u slučaju javnog sektora odraz strukturnih obilježja ekonomije, ali i obilježja, odnosno rizika financijskog sektora . Suprotno tome, tijekom uzlazne faze ciklusa zajednički regionalni i globalni faktori u značajnijoj mjeri određuju kreditni rizik države nego lokalne makroekonomske specifičnosti pojedine privrede pa prinosi na državni dug pojedinih izdavatelja konvergiraju  (slika 19. u poglavlju 3. Pregled rizika u sektoru financijskih usluga). Treba međutim istaknuti kako ti efekti kontrakcije i ekspanzije distribucije prinosa na državni dug posebno dolaze do izražaja u slučaju izdavatelja čiji kreditni rejting varira oko investicijskog razreda. Prelazak iz špekulativnog u investicijski razred rejtinga RH u 2019. rezultirao je značajnim smanjenjem prinosa na državni dug (slika 3.), no efekt prelaska iz investicijskog u špekulativni razred potencijalno neće biti simetričan, pri čemu bi negativni efekt na prinos mogao biti znatno veći od zapaženog pozitivnog efekta. Imajući to u vidu, vrlo je važno za utvrđivanje stabilnosti prinosa na ulaganja u državni dug razumjeti prirodu promjene rejtinga, odnosno je li ona uvjetovana idiosinkratskim fundamentima ekonomije ili je pak ciklički uvjetovana globalnim kretanjima na međunarodnim financijskim tržištima.  
+
+
+Izloženost sektora financijskih usluga javnom dugu u RH
+Trend rasta izloženosti financijskog sektora prema državi opažen je i u Hrvatskoj, gdje je iznos kredita i obveznica RH koji drže financijske institucije  tijekom sedam godina porastao za preko 40 %, sa 126 mlrd. HRK u ožujku 2012. na 178 mlrd. HRK u lipnju 2019. (slika 2.). U razdoblju od kraja 2015. opažena je supstitucija inozemnog duga RH s dugom prema domaćim financijskim institucijama, a što je između ostalog posljedica kontinuiranog rasta investicijskog potencijala sektora financijskih usluga (ponajprije mirovinskih fondova), koji u kontekstu slabe ponude na domaćem dioničkom tržištu, ali i regulatorno uvjetovanih investicijskih ograničenja, koncentriraju svoju izloženost prema državi.   
+
+Slika 2. Struktura obveznica RH prema protustranci
+  Izvori: HNB, Hanfa 
+
+Slika 3. Prinosi na obveznice RH reagiraju na kretanje kreditnog rejtinga oko investicijskog razreda
+ 
+Izvor: Eurostat - EMU convergence criterion bond yields, Trading economics
+
+Usporedna analiza prinosa dugoročnih državnih obveznica pokazuje da su prinosi na obveznice RH u razdoblju nakon 2008. u prosjeku iznosili 4,5 %, što je za 0,8 postotnih bodova više od obveznica na usporedive zemlje srednje i istočne Europe te za čak 2,3 postotna boda više u odnosu na ostale zemlje EU-a. Privlačnosti ulaganja u obveznice RH iz perspektive domaćih investitora dodatno svjedoči činjenica da je anualizirani prinos na domaći burzovni indeks CROBEX u razdoblju od kraja 2008. do kraja studenog 2019. iznosio svega 1,4 %, što je za 3,4 postotna boda niže od prosječnog prinosa na dugoročne državne obveznice RH u istom razdoblju. 
+
+Spomenuti trendovi rezultirali su komparativno visokom međupovezanosti sektora financijskih usluga i javnog sektora u Hrvatskoj (slika 5.). Krajem lipnja 2019. obveznice RH činile su više od 51,5 % ukupne imovine sektora financijskih usluga (slika 4. - lijevo). Visoka koncentracija izloženosti prema državi u ukupnim investicijama čini taj sektor izuzetno ranjivim na kretanja u javnom sektoru, a čija je višestruka povezanost prethodno opisana. Promatranjem druge strane tog odnosa može se primijetiti da se financiranje javnog duga putem vrijednosnih papira visoko oslanja na sektor financijskih usluga, koji je na kraju lipnja 2019. držao 45 % izdanih vrijednosnih papira RH uz izraženu tendenciju porasta tog udjela (slika 4. – desno).
+
+Prethodno spomenuti rizici za financijsku stabilnost koji proizlaze iz povezanosti fiskusa i sektora financijskih usluga dodatno dolaze do izražaja kada se uzme u obzir činjenica da su na kraju lipnja 2019. mirovinski fondovi i društva za osiguranje u Hrvatskoj bili znatno više izloženi prema općoj državi putem ulaganja u vrijednosne papire od ostatka EU-a (slika 5.). 
+
+Iako je takav investicijski model u proteklom razdoblju generirao konkurentne povrate, u trenutačnom okružju iznimno niskih (pa čak i negativnih) prinosa na državne obveznice on stavlja pritisak na profitabilnost financijskih institucija te ih izlaže riziku reinvestiranja. Do kraja 2022. godine dospijeva gotovo 30 % portfelja državnih obveznica fondova i društava za osiguranje, čiji prosječni godišnji kupon iznosi  5,84 %. Uz pretpostavku da će posrednici i fondovi s dospijećem tih ulaganja isti iznos sredstava plasirati u nova državna obveznička izdanja koja bi se u prosjeku plasirala uz kupon od 1 %, tada bi samo na kuponu procijenjeni godišnji gubitak prihoda sektora financijskih usluga iznosio oko 1,26 mlrd. kuna godišnje, odnosno čak 83 % trenutnog kuponskog prihoda po tim obveznicama. 
+
+Potraga za prinosima usmjerava institucije s tržišta financijskih usluga na rizičnije oblike ulaganja, koji na pojedinim tržištima pokazuju naznake cjenovne precijenjenosti pa raste izloženost riziku iznenadne i značajne revalorizacije ulaganja.
+
+Slika 4. Više od polovice ukupne imovine sektora financijskih usluga nalazi se u obliku državnih vrijednosnih papira (lijevo), što čini čak 45 % ukupnih izdanih vrijednosnih papira RH (desno) Izvori: HNB i Hanfa 
+ 
+
+Slika 5. Čak i u usporedbi s ostalim zemljama EU-a mirovinski fondovi i društva za osiguranje relativno su visoko izloženi prema državi putem vrijednosnih papira (kraj lipnja 2019.)
+ 
+Napomena: Mirovinski sustavi u zemljama EU-a nisu nužno usporedivi s obzirom na specifičnosti lokalnih regulativa i karakteristike sustava, stoga je potrebno gornju usporedbu interpretirati s oprezom.
+Izvori: ESB (Quarterly Sector Accounts) i Hanfa
+
+Slika 6. Udio državnih obveznica koje dospijevaju do kraja 2022. u portfelju državnih obvezničkih ulaganja
+ 
+Izvor: Hanfa
+
+Treba istaknuti kako pad prinosa na državne obveznice s druge strane povećava vrijednost obvezničkih portfelja institucija s tržišta financijskih usluga koji se vrednuju po tržišnoj cijeni. Stoga je  neto učinak trenutno niskih kamatnih stopa determiniran politikama vrednovanja obvezničkih ulaganja te specifičnostima poslovanja i regulacije pojedinih industrija na tržištu financijskih usluga . 
+
+Osim što značajno ulaganje u državne vrijednosne papire rezultira visokom koncentracijom izloženosti financijskih institucija prema jednom izdavatelju, ono ne doprinosi produbljivanju i razvoju ostalih domaćih financijskih tržišta, odnosno oblika ulaganja. Naime, mirovinski fondovi i društva za osiguranje u segmentu životnog osiguranja zbog karakteristika svog poslovanja trebaju, uz kreditne institucije, biti glavni izvori financiranja dugoročnih investicija u gospodarstvu, koje su nužan čimbenik održivog gospodarskog rasta. 
+
+Smanjiti postojeću, sa sistemskog aspekta visoku, razinu povezanosti financijskog sustava u cjelini i države moguće je kroz: (i) proširenje investicijske baze (inozemstvo i/ili mali ulagači), koja bi viškove direktno usmjeravala u dužnička izdanja javnog sektora te doprinijela sekundarnoj likvidnosti tih izdanja (problem „kokoš ili jaje” ), (ii) diferencijaciju likvidnosti državnih izdanja u skladu s kreditnim rizikom, odnosno s time povezano prepoznavanje i korekciju dilatacije između regulatorno definirane i stvarno prepoznate likvidnosti pojedinih ulaganja te (iii) relaksiranje investicijskih mogućnosti u druge oblike ulaganja, no vodeći računa o upravljanju rizicima i prihvatljivom riziku investiranja. U tom smislu, pozitivan doprinos smanjenju sistemskog rizika koji proizlazi iz povezanosti države i financijskog sektora u kontekstu društava za osiguranje imale su izmjene Zakona o osiguranju (NN, 30/15), kojim su s početkom siječnja 2016. ukinuta ograničenja ulaganja imovine za pokriće matematičkih i tehničkih pričuva, te u kontekstu mirovinskih fondova Zakon o izmjenama i dopunama Zakona o obveznim mirovinskim fondovima (NN 115/2018), koji definira da se novi osiguranici, ako u roku od mjesec dana od uspostavljanja obveznog mirovinskog osiguranja ne odaberu mirovinski fond, od početka listopada 2019. raspoređuju u fond A kategorije, koji ima najveći stupanj investicijske slobode. 
+
+
+
+ 
+ 
+
+ 
+Popis kratica
+
+AIF – alternativni investicijski fondovi
+BDP – bruto domaći proizvod
+CFD – ugovor za razliku (engl. contract for difference)
+DE – Savezna Republika Njemačka
+DRŽ – sektor opće države
+DZS – Državni zavod za statistiku
+EIOPA – Europsko  nadzorno  tijelo  za  osiguranje  i  strukovno  mirovinsko  osiguranje 
+(engl. European Insurance and Occupational Pensions Authority)
+ESB – Europska središnja banka
+ESMA – Europsko nadzorno tijelo za vrijednosne papire i tržišta kapitala 
+(engl. European Securities and Markets Authorithy)
+EU – Europska unija
+EUR – euro 
+FKT – faktoring društva
+Hanfa – Hrvatska agencija za nadzor financijskih usluga
+HNB – Hrvatska narodna banka
+HR – Republika Hrvatska
+ID – investicijska društva
+IF – investicijski fondovi
+INO – sektor inozemstva
+KI – kreditne institucije
+KN, HRK – hrvatska kuna
+KUĆ – sektor kućanstava
+LS – leasing društva
+MCR – minimalni solventni kapital (engl. Minimum Capital Requirement)
+MF – mirovinski fondovi
+MMF – Međunarodni monetarni fond
+mlrd. – milijarda
+mil. – milijun
+OFI – ostale financijske institucije
+OS – društva za osiguranje i reosiguranje
+p.b. – postotni bodovi
+PDV – porez na dodanu vrijednost
+POD – sektor nefinancijskih poduzeća
+RH – Republika Hrvatska
+SAD – Sjedinjene Američke Države
+SCR - potrebni solventni kapital (engl. Solvency Capital Requirement)
+SIE – zemlje srednje i istočne Europe (engl. Central and Eastern Europe)
+SKDD – Središnje klirinško depozitarno društvo
+UCITS – otvoreni investicijski fond s javnom ponudom (engl. Undertakings for Collective Investment in 
+Transferable Securities)
+UK – Ujedinjena Kraljevina
+
