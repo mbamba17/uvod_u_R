@@ -1,7 +1,7 @@
 ---
 title: "Uvod u R"
 author: "Mario Bambulović"
-date: "12.2.2020."
+date: "14.2.2020."
 output: html_notebook
 ---
 
@@ -14,6 +14,7 @@ output: html_notebook
 #### 5. Dohvat podataka
 #### 6. Priprema podataka
 #### 7. Analiza i komunikacija
+#### 8. Sljedeći koraci
 
 ## 1. Općenito o R-u
 
@@ -166,6 +167,7 @@ rm(pismenost_tablica,temp,financijska_pismenost,pom)
 
 EIOPA nije napredna kao ECB ili EUROSTAT u objavi podataka i objavljuje ih [u excelima](https://www.eiopa.europa.eu/tools-and-data/insurance-statistics_en), no i za to imamo sistem.
 
+> skripta **EIOPA_dohvat_podataka.R**
 
 ## 6. Priprema podataka
 
@@ -182,6 +184,8 @@ Kako bi se vrijeme potrebno za obradu podataka, ali i vrijeme za analizu podatak
 ### 6.2. Financijski računi
 
 Financijske račune dobivamo na krajnje nestrukturiran način i koji se nalaze [ovdje](D:\mbamba\DATA\Financijski_racuni). Ono što R omogućuje je sklapanje u 1 bazu koja se onda može koristiti za analizu i ne samo to nego je na taj način 970MB podataka u excelima pretvoreno u 2.7MB veliki dataframe.
+
+> folder **Financijski_racuni**
 
 Ovakva struktura podataka omogućuje sljedeće slike:
 
@@ -263,13 +267,15 @@ plot(graf, vertex.size = 25, edge.arrow.size = 0.5, layout=layout_nicely(graf), 
 # legenda
 legend("topleft", legend=c("<5","<5;10]","<10;15]","<15;20]",">20"), fill=c("white", "darkgreen","yellow3","darkorange","darkred"), title = "Oznake boja strelica \n (u % ukupne imovine sektora)", cex=0.8, bty="n")
 # brisanje privremenih tablica
-rm(zadnji_datum,br_dana,pom1,pom2,pom3,pom4,pom,bridovi,vrhovi,graf)
+rm(zadnji_datum,br_dana,pom1,pom2,pom3,pom4,pom,bridovi,vrhovi,graf,financijski_racuni)
 
 ```
 
 ### 6.3. Shiny aplikacija
 
 Kada su podaci u tidy formatu, onda je moguće napraviti sljedeću aplikaciju za analizu kretanja u sustavu.
+
+> folder **Shiny bilanca**
 
 ![](shiny_bilanca_slika.PNG)
 
@@ -279,17 +285,21 @@ Kada su podaci u tidy formatu, onda je moguće napraviti sljedeću aplikaciju za
 
 Ovo je primjer Gantt-grafikona koji ste vidjeli prošli tjedan sa vremenskim planom aktivnosti oko pripreme 4. broja Makroprudencijalnog skenera rizika.
 
+> skripta **gantt_skener4.R**
+
 ![](Gant_skener.PNG)
 
 ### 7.2. Gapminder primjer
 
 Hans Rosling je jedno od najpoznatijih imena u statističkim krugovima i veliki popularizator "data sciencea", njegov [TED talk](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=hr) je jedan od najgledanijih ikada (velika preporuka da ga pogledate).
 
+> skripta **gapminder primjer.R**
+
 ![](Gapminder.PNG)
 
 ### 7.3. Shiny mreže OeNB-a
 
-Vidi folder JVI_Contagion.
+> folder **JVI_Contagion**
 
 ![](Contagion.PNG)
 
@@ -375,5 +385,48 @@ rm(worldMap,reg,indEU,europeCoords,europeanUnionTable,P,pom,baza,delta_bdp)
 
 ### 7.5. Word cloud riječi koje su se najčešće koristile u 3. broju skenera
 
+> skripta **word_cloud.R**
+
 ![](word_cloud.png)
+
+## 8. Sljedeći koraci
+
+Do sada nije bilo puno govora o *in-house* podacima. To je još *work in progress*. Ako nekoga zanima, ovako izgleda [struktura skladišta podataka](https://mm.tt/1380237578?t=LtGZKzWCgD). Pri čemu svaki od navedenih čvorova je jedna vrsta iznosa koji se pohranjuje u bazi ima svoja pravila. Taj gordijski čvor ćemo morati raspetljati i pripremiti podatke (**odraditi onih 80% posla**) tako da možemo pristupiti analizi na kvalitetan način.
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(readxl)
+
+# Funkcija za kopiranje u excel ####
+skopiraj <- function(x,row.names=FALSE,col.names=TRUE,...) {
+  write.table(x,"clipboard",sep="\t",row.names=row.names,col.names=col.names,...)
+}
+
+load("finpodaci.Rda")
+
+# 0. Popis obrazaca, izvještaja, redaka i stupaca ####
+#popis <- finpodaci %>% select(sektor,izvjestaj,obrazac,oznaka_obrasca,oznaka_retka,redak,stupac,stupac_naziv) %>% distinct()
+
+# 1. Osiguranja - bilanca ####
+os_bilanca <- finpodaci %>% filter(izvjestaj %in% c("TIDO","TIDRE","TIDO-RE") & oznaka_obrasca=="Standardno" & obrazac %in% c("Bilanca","IFP") & stupac_naziv %in% c("TIDO - Bilanca - Tekuća godina - Život","TIDO - Bilanca - Tekuća godina - Neživot ","TIDRE - Bilanca - Tekuća godina - Život","TIDRE - Bilanca - Tekuća godina - Neživot ","TIDO-RE - IFP - Tekuća godina - Neživot ","TIDO-RE - IFP - Tekuća godina - Život")) %>% unite("obrazac",izvjestaj,obrazac,sep="-") %>% unite("redak",oznaka_retka,redak,sep=".") %>% select(datum,vrsta=stupac,subjekt,obrazac,redak,iznos) %>% mutate(vrsta=str_trim(vrsta),redak=str_trim(redak))
+# uvoz razina iz excela
+razine <- read_excel("Mapiranje obrazaca - osiguranja.xlsx",sheet = "za_izvoz_bilanca")
+os_bilanca <- full_join(os_bilanca,razine,by=c("obrazac","redak")) %>% na.omit()
+
+# Struktura imovine
+pom <- os_bilanca %>% group_by(datum,razina2) %>% filter(datum>="2011-09-30" & razina1=="Imovina") %>% summarise(iznos=sum(iznos,na.rm=T)/1000000000)
+ggplot(pom,aes(x=datum,y=iznos,fill=razina2)) + geom_area() + ggtitle("Imovina") + theme(legend.position = "top") + theme(legend.position = "top") + labs(x="",y="mlrd. HRK")
+# Struktura ulaganja
+pom <- os_bilanca %>% group_by(datum,razina3) %>% filter(datum>="2011-09-30" & razina2=="Ulaganja") %>% summarise(iznos=sum(iznos,na.rm=T)/1000000000)
+ggplot(pom,aes(x=datum,y=iznos,fill=razina3)) + geom_area() + ggtitle("Ulaganja") + theme(legend.position = "top") + theme(legend.position = "top") + labs(x="",y="mlrd. HRK")
+# Struktura obveza
+pom <- os_bilanca %>% group_by(datum,razina2) %>% filter(datum>="2011-09-30" & razina1=="Obveze") %>% summarise(iznos=sum(iznos,na.rm=T)/1000000000)
+ggplot(pom,aes(x=datum,y=iznos,fill=razina2)) + geom_area() + ggtitle("Obveze") + theme(legend.position = "top") + theme(legend.position = "top") + labs(x="",y="mlrd. HRK")
+# Struktura tehničkih pričuva
+pom <- os_bilanca %>% group_by(datum,razina3) %>% filter(datum>="2011-09-30" & razina2=="Tehničke pričuve") %>% summarise(iznos=sum(iznos,na.rm=T)/1000000000)
+ggplot(pom,aes(x=datum,y=iznos,fill=razina3)) + geom_area() + ggtitle("Tehničke pričuve") + theme(legend.position = "top") + labs(x="",y="mlrd. HRK")
+# brisanje privremenih tablica
+rm(finpodaci,os_bilanca,pom,razine)
+```
 
